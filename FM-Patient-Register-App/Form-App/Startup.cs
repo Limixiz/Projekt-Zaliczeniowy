@@ -1,8 +1,18 @@
+<<<<<<< HEAD
 using Form_App.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+=======
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+>>>>>>> Login-&-Registracion
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,6 +21,7 @@ namespace Form_App
 {
     public class Startup
     {
+<<<<<<< HEAD
         protected IConfigurationRoot Configuration;
         public Startup()
         {
@@ -19,16 +30,27 @@ namespace Form_App
             Configuration = configurationBuilder.Build();
         }
 
+=======
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+>>>>>>> Login-&-Registracion
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+<<<<<<< HEAD
             services.AddDbContext<Form_AppContext>(builder =>
             {
                 var config = Configuration["ConnectionString"];
                 builder.UseSqlServer(config);
             });
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<Form_AppContext>();
+=======
+>>>>>>> Login-&-Registracion
             services.AddControllersWithViews();
         }
 

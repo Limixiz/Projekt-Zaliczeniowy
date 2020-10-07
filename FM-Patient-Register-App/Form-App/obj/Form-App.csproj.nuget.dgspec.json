@@ -38,6 +38,7 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+<<<<<<< HEAD
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -45,11 +46,17 @@
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.8, )"
+=======
+            "Microsoft.AspNet.Identity.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+>>>>>>> Login-&-Registracion
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.8, )"
             },
+<<<<<<< HEAD
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -66,6 +73,8 @@
               "target": "Package",
               "version": "[3.1.8, )"
             },
+=======
+>>>>>>> Login-&-Registracion
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.4, )"
