@@ -110,7 +110,6 @@ D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App
 D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\obj\Debug\netcoreapp3.1\Razor\Views\Account\Edit.cshtml.g.cs
 D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\obj\Debug\netcoreapp3.1\Razor\Views\Account\ChangePassword.cshtml.g.cs
-<<<<<<< HEAD
 D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
@@ -155,9 +154,3 @@ D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App
 D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-=======
-D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
-D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\bin\Debug\netcoreapp3.1\EntityFramework.dll
-D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
-D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.EntityFramework.dll
->>>>>>> Login-&-Registracion

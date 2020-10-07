@@ -2,7 +2,6 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-<<<<<<< HEAD
       "Microsoft.AspNetCore.Authentication/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -136,39 +135,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll": {}
-=======
-      "EntityFramework/6.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/EntityFramework.SqlServer.dll": {},
-          "lib/net45/EntityFramework.dll": {}
-        },
-        "runtime": {
-          "lib/net45/EntityFramework.SqlServer.dll": {},
-          "lib/net45/EntityFramework.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Identity.Core/2.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Identity.EntityFramework/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework": "6.1.0",
-          "Microsoft.AspNet.Identity.Core": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll": {}
->>>>>>> Login-&-Registracion
         }
       },
       "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
@@ -183,7 +149,6 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Html.Abstractions.dll": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.AspNetCore.Http/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -268,8 +233,6 @@
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {}
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "Microsoft.AspNetCore.Razor/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -304,7 +267,6 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Runtime.dll": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.AspNetCore.WebUtilities/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -318,8 +280,6 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll": {}
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -579,7 +539,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -619,8 +578,6 @@
           }
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "Microsoft.EntityFrameworkCore/3.1.8": {
         "type": "package",
         "dependencies": {
@@ -660,7 +617,6 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.EntityFrameworkCore.Design/3.1.8": {
         "type": "package",
         "dependencies": {
@@ -714,8 +670,6 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "Microsoft.Extensions.Caching.Abstractions/3.1.8": {
         "type": "package",
         "dependencies": {
@@ -800,7 +754,6 @@
           "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.FileProviders.Abstractions/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -856,8 +809,6 @@
           "lib/netcoreapp3.1/Microsoft.Extensions.Identity.Stores.dll": {}
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "Microsoft.Extensions.Logging/3.1.8": {
         "type": "package",
         "dependencies": {
@@ -882,7 +833,6 @@
           "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.ObjectPool/2.2.0": {
         "type": "package",
         "compile": {
@@ -892,8 +842,6 @@
           "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll": {}
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "Microsoft.Extensions.Options/3.1.8": {
         "type": "package",
         "dependencies": {
@@ -916,7 +864,6 @@
           "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.WebEncoders/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -1105,87 +1052,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll": {}
-=======
-      "Microsoft.NETCore.Platforms/2.1.2": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/_._": {}
-        }
-      },
-      "Microsoft.NETCore.Targets/1.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/_._": {}
-        }
-      },
-      "Microsoft.VisualStudio.Web.CodeGeneration/3.1.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "3.1.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": "3.1.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.dll": {}
-        }
-      },
-      "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/3.1.4": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "11.0.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll": {}
-        }
-      },
-      "Microsoft.VisualStudio.Web.CodeGeneration.Core/3.1.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "3.1.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Templating": "3.1.4",
-          "Newtonsoft.Json": "11.0.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll": {}
-        }
-      },
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": "3.1.4"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/dotnet-aspnet-codegenerator-design.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/dotnet-aspnet-codegenerator-design.dll": {}
-        }
-      },
-      "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore/3.1.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.VisualStudio.Web.CodeGeneration.Core": "3.1.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll": {}
->>>>>>> Login-&-Registracion
         }
       },
       "Microsoft.VisualStudio.Web.CodeGeneration.Templating/3.1.4": {
@@ -1242,7 +1108,6 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.Win32.Registry/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -1266,8 +1131,6 @@
           }
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -1378,7 +1241,6 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-<<<<<<< HEAD
       "runtime.native.System.Data.SqlClient.sni/4.4.0": {
         "type": "package",
         "dependencies": {
@@ -1387,8 +1249,6 @@
           "runtime.win-x86.runtime.native.System.Data.SqlClient.sni": "4.4.0"
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "runtime.native.System.IO.Compression/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1520,7 +1380,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
         "type": "package",
         "runtimeTargets": {
@@ -1548,8 +1407,6 @@
           }
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1562,7 +1419,6 @@
           "lib/netstandard1.6/System.AppContext.dll": {}
         }
       },
-<<<<<<< HEAD
       "System.Buffers/4.5.0": {
         "type": "package",
         "compile": {
@@ -1570,22 +1426,6 @@
         },
         "runtime": {
           "lib/netcoreapp2.0/_._": {}
-=======
-      "System.Buffers/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Diagnostics.Tracing": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Threading": "4.3.0"
-        },
-        "compile": {
-          "lib/netstandard1.1/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/System.Buffers.dll": {}
->>>>>>> Login-&-Registracion
         }
       },
       "System.Collections/4.3.0": {
@@ -1629,7 +1469,6 @@
           "lib/netstandard2.0/System.Collections.Immutable.dll": {}
         }
       },
-<<<<<<< HEAD
       "System.Collections.NonGeneric/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1677,8 +1516,6 @@
           "lib/netstandard1.3/System.ComponentModel.dll": {}
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "System.ComponentModel.Annotations/4.7.0": {
         "type": "package",
         "compile": {
@@ -1688,7 +1525,6 @@
           "lib/netstandard2.1/System.ComponentModel.Annotations.dll": {}
         }
       },
-<<<<<<< HEAD
       "System.ComponentModel.Primitives/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1729,8 +1565,6 @@
           "lib/netstandard1.5/System.ComponentModel.TypeConverter.dll": {}
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "System.Composition/1.0.31": {
         "type": "package",
         "dependencies": {
@@ -1845,7 +1679,6 @@
           "lib/netstandard1.0/System.Composition.TypedParts.dll": {}
         }
       },
-<<<<<<< HEAD
       "System.Configuration.ConfigurationManager/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -1859,8 +1692,6 @@
           "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "System.Console/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1963,7 +1794,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "System.IdentityModel.Tokens.Jwt/5.5.0": {
         "type": "package",
         "dependencies": {
@@ -1978,8 +1808,6 @@
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "System.IO/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2171,7 +1999,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "System.Net.NameResolution/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2204,8 +2031,6 @@
           }
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "System.Net.Primitives/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2248,7 +2073,6 @@
           "lib/netstandard1.3/System.ObjectModel.dll": {}
         }
       },
-<<<<<<< HEAD
       "System.Private.DataContractSerialization/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2290,13 +2114,6 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
           "Microsoft.NETCore.Targets": "1.1.0",
-=======
-      "System.Reflection/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
->>>>>>> Login-&-Registracion
           "System.IO": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
           "System.Runtime": "4.3.0"
@@ -2418,7 +2235,6 @@
           "ref/netstandard1.5/System.Runtime.dll": {}
         }
       },
-<<<<<<< HEAD
       "System.Runtime.Caching/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -2442,8 +2258,6 @@
           }
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "System.Runtime.CompilerServices.Unsafe/4.5.2": {
         "type": "package",
         "compile": {
@@ -2532,7 +2346,6 @@
           "lib/netstandard1.3/System.Runtime.Numerics.dll": {}
         }
       },
-<<<<<<< HEAD
       "System.Runtime.Serialization.Formatters/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2595,8 +2408,6 @@
           }
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "System.Security.Cryptography.Algorithms/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2633,7 +2444,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "System.Security.Cryptography.Cng/4.5.0": {
         "type": "package",
         "compile": {
@@ -2644,32 +2454,6 @@
         },
         "runtimeTargets": {
           "runtimes/win/lib/netcoreapp2.1/System.Security.Cryptography.Cng.dll": {
-=======
-      "System.Security.Cryptography.Cng/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "System.IO": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Handles": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Security.Cryptography.Algorithms": "4.3.0",
-          "System.Security.Cryptography.Encoding": "4.3.0",
-          "System.Security.Cryptography.Primitives": "4.3.0",
-          "System.Text.Encoding": "4.3.0"
-        },
-        "compile": {
-          "ref/netstandard1.6/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.Cng.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
-          "runtimes/win/lib/netstandard1.6/System.Security.Cryptography.Cng.dll": {
->>>>>>> Login-&-Registracion
             "assetType": "runtime",
             "rid": "win"
           }
@@ -2766,7 +2550,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "System.Security.Cryptography.Pkcs/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -2785,8 +2568,6 @@
           }
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "System.Security.Cryptography.Primitives/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2805,7 +2586,6 @@
           "lib/netstandard1.3/System.Security.Cryptography.Primitives.dll": {}
         }
       },
-<<<<<<< HEAD
       "System.Security.Cryptography.ProtectedData/4.5.0": {
         "type": "package",
         "compile": {
@@ -2821,8 +2601,6 @@
           }
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "System.Security.Cryptography.X509Certificates/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2866,7 +2644,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "System.Security.Cryptography.Xml/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -2940,8 +2717,6 @@
           }
         }
       },
-=======
->>>>>>> Login-&-Registracion
       "System.Text.Encoding/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3097,7 +2872,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
-<<<<<<< HEAD
       },
       "System.Xml.XmlDocument/4.3.0": {
         "type": "package",
@@ -3147,13 +2921,10 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
-=======
->>>>>>> Login-&-Registracion
       }
     }
   },
   "libraries": {
-<<<<<<< HEAD
     "Microsoft.AspNetCore.Authentication/2.2.0": {
       "sha512": "b0R9X7L6zMqNsssKDvhYHuNi5x0s4DyHTeXybIAyGaitKiW1Q5aAGKdV2codHPiePv9yHfC9hAMyScXQ/xXhPw==",
       "type": "package",
@@ -3292,62 +3063,6 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Server.Abstractions.xml",
         "microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.hosting.server.abstractions.nuspec"
-=======
-    "EntityFramework/6.1.0": {
-      "sha512": "u/M0OEfqxTUsL5BwzD66eBGm278/ozqdLK3JvMO6QwUxxc+z7ZUkTYm4suDhWRqzkc6mOhvXDQY5dZUwbldxyQ==",
-      "type": "package",
-      "path": "entityframework/6.1.0",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "content/App.config.transform",
-        "content/Web.config.transform",
-        "entityframework.6.1.0.nupkg.sha512",
-        "entityframework.nuspec",
-        "lib/net40/EntityFramework.SqlServer.dll",
-        "lib/net40/EntityFramework.SqlServer.xml",
-        "lib/net40/EntityFramework.dll",
-        "lib/net40/EntityFramework.xml",
-        "lib/net45/EntityFramework.SqlServer.dll",
-        "lib/net45/EntityFramework.SqlServer.xml",
-        "lib/net45/EntityFramework.dll",
-        "lib/net45/EntityFramework.xml",
-        "tools/EntityFramework.PowerShell.Utility.dll",
-        "tools/EntityFramework.PowerShell.dll",
-        "tools/EntityFramework.psd1",
-        "tools/EntityFramework.psm1",
-        "tools/about_EntityFramework.help.txt",
-        "tools/init.ps1",
-        "tools/install.ps1",
-        "tools/migrate.exe"
-      ]
-    },
-    "Microsoft.AspNet.Identity.Core/2.2.3": {
-      "sha512": "Mv5FpoaxspE8hlWLE4r1IdZtovg/OyFgVRhxQbx47J4sqdLImN1hnM1lnwCj+/wLmqtqFk/RYMoZ5GAcwm/00g==",
-      "type": "package",
-      "path": "microsoft.aspnet.identity.core/2.2.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/Microsoft.AspNet.Identity.Core.dll",
-        "lib/net45/Microsoft.AspNet.Identity.Core.xml",
-        "microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
-        "microsoft.aspnet.identity.core.nuspec"
-      ]
-    },
-    "Microsoft.AspNet.Identity.EntityFramework/2.2.3": {
-      "sha512": "dt4XZChjw3a6jE66Yd6LkF9omspxi0A9lJpwBZz8Wl1sabOS6dlLP1OOTVuUjtPaoAshjoIzvS6DFRQdPyq55g==",
-      "type": "package",
-      "path": "microsoft.aspnet.identity.entityframework/2.2.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll",
-        "lib/net45/Microsoft.AspNet.Identity.EntityFramework.xml",
-        "microsoft.aspnet.identity.entityframework.2.2.3.nupkg.sha512",
-        "microsoft.aspnet.identity.entityframework.nuspec"
->>>>>>> Login-&-Registracion
       ]
     },
     "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
@@ -3363,7 +3078,6 @@
         "microsoft.aspnetcore.html.abstractions.nuspec"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.AspNetCore.Http/2.2.0": {
       "sha512": "YogBSMotWPAS/X5967pZ+yyWPQkThxhmzAwyCHCSSldzYBkW5W5d6oPfBaPqQOnSHYTpSOSOkpZoAce0vwb6+A==",
       "type": "package",
@@ -3446,8 +3160,6 @@
         "microsoft.aspnetcore.identity.entityframeworkcore.nuspec"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "Microsoft.AspNetCore.Razor/2.2.0": {
       "sha512": "V54PIyDCFl8COnTp9gezNHpUNHk7F9UnerGeZy3UfbnwYvfzbo+ipqQmSgeoESH8e0JvKhRTyQyZquW2EPtCmg==",
       "type": "package",
@@ -3488,7 +3200,6 @@
         "microsoft.aspnetcore.razor.runtime.nuspec"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.AspNetCore.WebUtilities/2.2.0": {
       "sha512": "9ErxAAKaDzxXASB/b5uLEkLgUWv1QbeVxyJYEHQwMaxXOeFFVkQxiq8RyfVcifLU7NR0QY0p3acqx4ZpYfhHDg==",
       "type": "package",
@@ -3502,8 +3213,6 @@
         "microsoft.aspnetcore.webutilities.nuspec"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "sha512": "yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==",
       "type": "package",
@@ -3752,7 +3461,6 @@
         "microsoft.codeanalysis.workspaces.common.nuspec"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.CSharp/4.7.0": {
       "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "type": "package",
@@ -3872,8 +3580,6 @@
         "runtimes/win/lib/netstandard2.0/Microsoft.Data.SqlClient.pdb"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "Microsoft.EntityFrameworkCore/3.1.8": {
       "sha512": "bI+yxA329qf+8efR6A35/3L2NLekcsWJOfXakA37ILUiWcX1qp/XsXmEi6SYMpMikioy0a5p0IU8gHoqSvtLaA==",
       "type": "package",
@@ -3916,7 +3622,6 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.EntityFrameworkCore.Design/3.1.8": {
       "sha512": "nFsL0L2CdadJ9dmSsmYlDZ1dFWQEr9zCWZ+oI4OOLtoS7gU2XPZiEhtvipAFzfSadx3XkteX/4fgdbM7wTub9A==",
       "type": "package",
@@ -3985,8 +3690,6 @@
         "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "Microsoft.Extensions.Caching.Abstractions/3.1.8": {
       "sha512": "iBIdKjKa2nR4LdknV2JMSRpJVM5TOca25EckPm6SZQT6HfH8RoHrn9m14GUAkvzE+uOziXRoAwr8YIC6ZOpyXg==",
       "type": "package",
@@ -4101,7 +3804,6 @@
         "microsoft.extensions.dependencyinjection.abstractions.nuspec"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.Extensions.FileProviders.Abstractions/2.2.0": {
       "sha512": "EcnaSsPTqx2MGnHrmWOD0ugbuuqVT8iICqSqPzi45V5/MA1LjUNb0kwgcxBGqizV1R+WeBK7/Gw25Jzkyk9bIw==",
       "type": "package",
@@ -4162,8 +3864,6 @@
         "microsoft.extensions.identity.stores.nuspec"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "Microsoft.Extensions.Logging/3.1.8": {
       "sha512": "Bch88WGwrgJUabSOiTbPgne/jkCcWTyP97db8GWzQH9RcGi6TThiRm8ggsD+OXBW2UBwAYx1Zb1ns1elsMiomQ==",
       "type": "package",
@@ -4194,7 +3894,6 @@
         "microsoft.extensions.logging.abstractions.nuspec"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.Extensions.ObjectPool/2.2.0": {
       "sha512": "gA8H7uQOnM5gb+L0uTNjViHYr+hRDqCdfugheGo/MxQnuHzmhhzCBTIPm19qL1z1Xe0NEMabfcOBGv9QghlZ8g==",
       "type": "package",
@@ -4409,38 +4108,6 @@
         "lib/netstandard2.0/Microsoft.Net.Http.Headers.xml",
         "microsoft.net.http.headers.2.2.0.nupkg.sha512",
         "microsoft.net.http.headers.nuspec"
-=======
-    "Microsoft.Extensions.Options/3.1.8": {
-      "sha512": "mpkwjNg5sr1XHEJwVS8G1w6dsh5/72vQOOe4aqhg012j93m8OOmfyIBwoQN4SE0KRRS+fatdW3qqUrHbRwlWOA==",
-      "type": "package",
-      "path": "microsoft.extensions.options/3.1.8",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "lib/netcoreapp3.1/Microsoft.Extensions.Options.dll",
-        "lib/netcoreapp3.1/Microsoft.Extensions.Options.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Options.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Options.xml",
-        "microsoft.extensions.options.3.1.8.nupkg.sha512",
-        "microsoft.extensions.options.nuspec"
-      ]
-    },
-    "Microsoft.Extensions.Primitives/3.1.8": {
-      "sha512": "XcIoXQhT0kwnEhOKv/LmpWR6yF6QWmBTy9Fcsz4aHuCOgTJ7Zd23ELtUA4BfwlYoFlSedavS+vURz9tNekd44g==",
-      "type": "package",
-      "path": "microsoft.extensions.primitives/3.1.8",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll",
-        "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
-        "microsoft.extensions.primitives.3.1.8.nupkg.sha512",
-        "microsoft.extensions.primitives.nuspec"
->>>>>>> Login-&-Registracion
       ]
     },
     "Microsoft.NETCore.Platforms/2.1.2": {
@@ -4923,7 +4590,6 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.Win32.Registry/4.5.0": {
       "sha512": "+FWlwd//+Tt56316p00hVePBCouXyEzT86Jb3+AuRotTND0IYn0OO3obs1gnQEs/txEnt+rF2JBGLItTG+Be6A==",
       "type": "package",
@@ -4964,8 +4630,6 @@
         "version.txt"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "NETStandard.Library/1.6.1": {
       "sha512": "WcSp3+vP+yHNgS8EV5J7pZ9IRpeDuARBPN28by8zqff1wJQXm26PVU8L3/fYLBJVU7BtDyqNVWq2KlCVvSSR4A==",
       "type": "package",
@@ -5082,7 +4746,6 @@
         "runtime.native.system.nuspec"
       ]
     },
-<<<<<<< HEAD
     "runtime.native.System.Data.SqlClient.sni/4.4.0": {
       "sha512": "A8v6PGmk+UGbfWo5Ixup0lPM4swuSwOiayJExZwKIOjTlFFQIsu3QnDXECosBEyrWSPryxBVrdqtJyhK3BaupQ==",
       "type": "package",
@@ -5098,8 +4761,6 @@
         "version.txt"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "runtime.native.System.IO.Compression/4.3.0": {
       "sha512": "INBPonS5QPEgn7naufQFXJEp3zX6L4bwHgJ/ZH78aBTpeNfQMtf7C6VrAFhlq2xxWBveIOWyFzQjJ8XzHMhdOQ==",
       "type": "package",
@@ -5268,7 +4929,6 @@
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
       ]
     },
-<<<<<<< HEAD
     "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
       "sha512": "LbrynESTp3bm5O/+jGL8v0Qg5SJlTV08lpIpFesXjF6uGNMWqFnUQbYBJwZTeua6E/Y7FIM1C54Ey1btLWupdg==",
       "type": "package",
@@ -5317,8 +4977,6 @@
         "version.txt"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "System.AppContext/4.3.0": {
       "sha512": "fKC+rmaLfeIzUhagxY17Q9siv/sPrjjKcfNg1Ic8IlQkZLipo8ljcaZQu4VtI4Jqbzjc2VTjzGLF6WmsRXAEgA==",
       "type": "package",
@@ -5374,7 +5032,6 @@
         "system.appcontext.nuspec"
       ]
     },
-<<<<<<< HEAD
     "System.Buffers/4.5.0": {
       "sha512": "pL2ChpaRRWI/p4LXyy4RgeWlYF2sgfj/pnVMvBqwNFr5cXg7CXNnWZWxrOONLg8VGdFB8oB+EG2Qw4MLgTOe+A==",
       "type": "package",
@@ -5402,21 +5059,6 @@
         "system.buffers.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
-=======
-    "System.Buffers/4.3.0": {
-      "sha512": "ratu44uTIHgeBeI0dE8DWvmXVBSo4u7ozRZZHOMmK/JPpYyo0dAfgSiHlpiObMQ5lEtEyIXA40sKRYg5J6A8uQ==",
-      "type": "package",
-      "path": "system.buffers/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/netstandard1.1/.xml",
-        "lib/netstandard1.1/System.Buffers.dll",
-        "system.buffers.4.3.0.nupkg.sha512",
-        "system.buffers.nuspec"
->>>>>>> Login-&-Registracion
       ]
     },
     "System.Collections/4.3.0": {
@@ -5581,7 +5223,6 @@
         "version.txt"
       ]
     },
-<<<<<<< HEAD
     "System.Collections.NonGeneric/4.3.0": {
       "sha512": "prtjIEMhGUnQq6RnPEYLpFt8AtLbp9yq2zxOSrY7KJJZrw25Fi97IzBqY7iqssbM61Ek5b8f3MG/sG1N2sN5KA==",
       "type": "package",
@@ -5719,8 +5360,6 @@
         "system.componentmodel.nuspec"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "System.ComponentModel.Annotations/4.7.0": {
       "sha512": "0YFqjhp/mYkDGpU0Ye1GjE53HMp9UVfGN7seGpAMttAC0C40v5gw598jCgpbBLMmCo0E5YRLBv5Z2doypO49ZQ==",
       "type": "package",
@@ -5810,7 +5449,6 @@
         "version.txt"
       ]
     },
-<<<<<<< HEAD
     "System.ComponentModel.Primitives/4.3.0": {
       "sha512": "j8GUkCpM8V4d4vhLIIoBLGey2Z5bCkMVNjEZseyAlm4n5arcsJOeI3zkUP+zvZgzsbLTYh4lYeP/ZD/gdIAPrw==",
       "type": "package",
@@ -5903,8 +5541,6 @@
         "system.componentmodel.typeconverter.nuspec"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "System.Composition/1.0.31": {
       "sha512": "I+D26qpYdoklyAVUdqwUBrEIckMNjAYnuPJy/h9dsQItpQwVREkDFs4b4tkBza0kT2Yk48Lcfsv2QQ9hWsh9Iw==",
       "type": "package",
@@ -5993,7 +5629,6 @@
         "system.composition.typedparts.nuspec"
       ]
     },
-<<<<<<< HEAD
     "System.Configuration.ConfigurationManager/4.5.0": {
       "sha512": "UIFvaFfuKhLr9u5tWMxmVoDPkFeD+Qv8gUuap4aZgVGYSYMdERck4OhLN/2gulAc0nYTEigWXSJNNWshrmxnng==",
       "type": "package",
@@ -6015,8 +5650,6 @@
         "version.txt"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "System.Console/4.3.0": {
       "sha512": "DHDrIxiqk1h03m6khKWV2X8p/uvN79rgSqpilL6uzpmSfxfU5ng8VcPtW4qsDsQDHiTv6IPV9TmD5M/vElPNLg==",
       "type": "package",
@@ -6443,7 +6076,6 @@
         "system.globalization.extensions.nuspec"
       ]
     },
-<<<<<<< HEAD
     "System.IdentityModel.Tokens.Jwt/5.5.0": {
       "sha512": "xa8kptJ+uf9hzj366f3pLcs5HFZ6dQMDKzEGq/yZNF0s3mVfyIhuQwgDcTJlAU4AROne/6Z5+vITwrW3gVNKIA==",
       "type": "package",
@@ -6465,8 +6097,6 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "System.IO/4.3.0": {
       "sha512": "3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
       "type": "package",
@@ -6994,7 +6624,6 @@
         "system.net.http.nuspec"
       ]
     },
-<<<<<<< HEAD
     "System.Net.NameResolution/4.3.0": {
       "sha512": "AFYl08R7MrsrEjqpQWTZWBadqXyTzNDaWpMqyxhb0d6sGhV6xMDKueuBXlLL30gz+DIRY6MpdgnHWlCh5wmq9w==",
       "type": "package",
@@ -7037,8 +6666,6 @@
         "system.net.nameresolution.nuspec"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "System.Net.Primitives/4.3.0": {
       "sha512": "qOu+hDwFwoZPbzPvwut2qATe3ygjeQBDQj91xlsaqGFQUI5i4ZnZb8yyQuLGpDGivEPIt8EJkd1BVzVoP31FXA==",
       "type": "package",
@@ -7226,7 +6853,6 @@
         "system.objectmodel.nuspec"
       ]
     },
-<<<<<<< HEAD
     "System.Private.DataContractSerialization/4.3.0": {
       "sha512": "yDaJ2x3mMmjdZEDB4IbezSnCsnjQ4BxinKhRAaP6kEgL6Bb6jANWphs5SzyD8imqeC/3FxgsuXT6ykkiH1uUmA==",
       "type": "package",
@@ -7243,8 +6869,6 @@
         "system.private.datacontractserialization.nuspec"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "System.Reflection/4.3.0": {
       "sha512": "KMiAFoW7MfJGa9nDFNcfu+FpEdiHpWgTcS2HdMpDvt9saK3y/G4GwprPyzqjFH9NTaGPQeWNHU+iDlDILj96aQ==",
       "type": "package",
@@ -7787,7 +7411,6 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
         "system.runtime.4.3.0.nupkg.sha512",
-<<<<<<< HEAD
         "system.runtime.nuspec"
       ]
     },
@@ -7823,9 +7446,6 @@
         "system.runtime.caching.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
-=======
-        "system.runtime.nuspec"
->>>>>>> Login-&-Registracion
       ]
     },
     "System.Runtime.CompilerServices.Unsafe/4.5.2": {
@@ -8157,7 +7777,6 @@
         "system.runtime.numerics.nuspec"
       ]
     },
-<<<<<<< HEAD
     "System.Runtime.Serialization.Formatters/4.3.0": {
       "sha512": "KT591AkTNFOTbhZlaeMVvfax3RqhH1EJlcwF50Wm7sfnBLuHiOeZRRKrr1ns3NESkM20KPZ5Ol/ueMq5vg4QoQ==",
       "type": "package",
@@ -8361,8 +7980,6 @@
         "version.txt"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "System.Security.Cryptography.Algorithms/4.3.0": {
       "sha512": "W1kd2Y8mYSCgc3ULTAZ0hOP2dSdG5YauTb1089T0/kRcN2MpSAW1izOFROrJgxSlMn3ArsgHXagigyi+ibhevg==",
       "type": "package",
@@ -8404,7 +8021,6 @@
         "system.security.cryptography.algorithms.nuspec"
       ]
     },
-<<<<<<< HEAD
     "System.Security.Cryptography.Cng/4.5.0": {
       "sha512": "WG3r7EyjUe9CMPFSs6bty5doUqT+q9pbI80hlNzo2SkPkZ4VTuZkGWjpp77JB8+uaL4DFPRdBsAY+DX3dBK92A==",
       "type": "package",
@@ -8466,34 +8082,6 @@
         "system.security.cryptography.cng.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
-=======
-    "System.Security.Cryptography.Cng/4.3.0": {
-      "sha512": "03idZOqFlsKRL4W+LuCpJ6dBYDUWReug6lZjBa3uJWnk5sPCUXckocevTaUA8iT/MFSrY/2HXkOt753xQ/cf8g==",
-      "type": "package",
-      "path": "system.security.cryptography.cng/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/net46/System.Security.Cryptography.Cng.dll",
-        "lib/net461/System.Security.Cryptography.Cng.dll",
-        "lib/net463/System.Security.Cryptography.Cng.dll",
-        "ref/net46/System.Security.Cryptography.Cng.dll",
-        "ref/net461/System.Security.Cryptography.Cng.dll",
-        "ref/net463/System.Security.Cryptography.Cng.dll",
-        "ref/netstandard1.3/System.Security.Cryptography.Cng.dll",
-        "ref/netstandard1.4/System.Security.Cryptography.Cng.dll",
-        "ref/netstandard1.6/System.Security.Cryptography.Cng.dll",
-        "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.Cng.dll",
-        "runtimes/win/lib/net46/System.Security.Cryptography.Cng.dll",
-        "runtimes/win/lib/net461/System.Security.Cryptography.Cng.dll",
-        "runtimes/win/lib/net463/System.Security.Cryptography.Cng.dll",
-        "runtimes/win/lib/netstandard1.4/System.Security.Cryptography.Cng.dll",
-        "runtimes/win/lib/netstandard1.6/System.Security.Cryptography.Cng.dll",
-        "system.security.cryptography.cng.4.3.0.nupkg.sha512",
-        "system.security.cryptography.cng.nuspec"
->>>>>>> Login-&-Registracion
       ]
     },
     "System.Security.Cryptography.Csp/4.3.0": {
@@ -8585,7 +8173,6 @@
         "system.security.cryptography.openssl.nuspec"
       ]
     },
-<<<<<<< HEAD
     "System.Security.Cryptography.Pkcs/4.5.0": {
       "sha512": "TGQX51gxpY3K3I6LJlE2LAftVlIMqJf0cBGhz68Y89jjk3LJCB6SrwiD+YN1fkqemBvWGs+GjyMJukl6d6goyQ==",
       "type": "package",
@@ -8619,8 +8206,6 @@
         "version.txt"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "System.Security.Cryptography.Primitives/4.3.0": {
       "sha512": "7bDIyVFNL/xKeFHjhobUAQqSpJq9YTOpbEs6mR233Et01STBMXNAc/V+BM6dwYGc95gVh/Zf+iVXWzj3mE8DWg==",
       "type": "package",
@@ -8650,7 +8235,6 @@
         "system.security.cryptography.primitives.nuspec"
       ]
     },
-<<<<<<< HEAD
     "System.Security.Cryptography.ProtectedData/4.5.0": {
       "sha512": "wLBKzFnDCxP12VL9ANydSYhk59fC4cvOr9ypYQLPnAj48NQIhqnjdD2yhP8yEKyBJEjERWS9DisKL7rX5eU25Q==",
       "type": "package",
@@ -8692,8 +8276,6 @@
         "version.txt"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "System.Security.Cryptography.X509Certificates/4.3.0": {
       "sha512": "t2Tmu6Y2NtJ2um0RtcuhP7ZdNNxXEgUm2JeoA/0NvlMjAhKCnM1NX07TDl3244mVp3QU6LPEhT3HTtH1uF7IYw==",
       "type": "package",
@@ -8750,7 +8332,6 @@
         "system.security.cryptography.x509certificates.nuspec"
       ]
     },
-<<<<<<< HEAD
     "System.Security.Cryptography.Xml/4.5.0": {
       "sha512": "i2Jn6rGXR63J0zIklImGRkDIJL4b1NfPSEbIVHBlqoIb12lfXIigCbDRpDmIEzwSo/v1U5y/rYJdzZYSyCWxvg==",
       "type": "package",
@@ -8877,8 +8458,6 @@
         "system.security.securestring.nuspec"
       ]
     },
-=======
->>>>>>> Login-&-Registracion
     "System.Text.Encoding/4.3.0": {
       "sha512": "BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
       "type": "package",
@@ -9523,7 +9102,6 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
-<<<<<<< HEAD
     },
     "System.Xml.XmlDocument/4.3.0": {
       "sha512": "lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
@@ -9634,23 +9212,16 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
-=======
->>>>>>> Login-&-Registracion
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-<<<<<<< HEAD
       "Microsoft.AspNetCore.Identity >= 2.2.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.8",
       "Microsoft.EntityFrameworkCore >= 3.1.8",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.8",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.8",
-=======
-      "Microsoft.AspNet.Identity.EntityFramework >= 2.2.3",
-      "Microsoft.EntityFrameworkCore >= 3.1.8",
->>>>>>> Login-&-Registracion
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4"
     ]
   },
@@ -9691,7 +9262,6 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
-<<<<<<< HEAD
           "Microsoft.AspNetCore.Identity": {
             "target": "Package",
             "version": "[2.2.0, )"
@@ -9699,17 +9269,11 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[3.1.8, )"
-=======
-          "Microsoft.AspNet.Identity.EntityFramework": {
-            "target": "Package",
-            "version": "[2.2.3, )"
->>>>>>> Login-&-Registracion
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[3.1.8, )"
           },
-<<<<<<< HEAD
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -9726,8 +9290,6 @@
             "target": "Package",
             "version": "[3.1.8, )"
           },
-=======
->>>>>>> Login-&-Registracion
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.1.4, )"
@@ -9754,41 +9316,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
-<<<<<<< HEAD
   }
-=======
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'EntityFramework 6.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "EntityFramework",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.AspNet.Identity.Core",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.Identity.EntityFramework 2.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.AspNet.Identity.EntityFramework",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
->>>>>>> Login-&-Registracion
 }
