@@ -3,176 +3,196 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Form_App.Models.DataBaseModel;
+using Form_App.Services.Interfaces;
+using Form_App.ViewModels;
 using Form_App.ViewModels.PatientsInformationModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Form_App.Controllers
 {
-    [Authorize(Roles = "User,Admin")]
+
+    //[Authorize(Roles = "User,Admin")]
     public class PatientController : Controller
-    {  
-            [HttpGet]
-            [AllowAnonymous]
-            public IActionResult Index()
-            {
+    {
+        private readonly IPatientService _patientService;
+        private readonly UserManager<IdentityUser> _userManager;
+
+        private PatientController(IPatientService patientService, UserManager<IdentityUser> userManager)
+        {
+            _patientService = patientService;
+            _userManager = userManager;
+        }
+
+        
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Index()
+        {
             return View();
-            }
+        }
 
-            [HttpGet]
-            [AllowAnonymous]
-            public IActionResult Details(int id)
+        [HttpGet]
+        public IActionResult List()
+        {
+            var patientsByLoggedUserList = _patientService.GetAllByLoggedUser(User.Identity.Name);
+            List<PatientListViewModel> patientList = new List<PatientListViewModel>();
+            foreach (var patient in patientsByLoggedUserList)
             {
-                var patient = _recipeService.Get(id);
-                DetailsPatienInfoViewModel patientDetailsViewModel = new DetailsPatienInfoViewModel
+                patientList.Add(new PatientListViewModel
                 {
-                    ID = recipe.ID,
-                    Description = recipe.Description,
-                    Ingredients = recipe.Ingredients,
-                    Name = recipe.Name,
-                    Preparation = recipe.Preparation,
-                    PreparationTime = recipe.PreparationTime,
-                    PhotoPath = recipe.PhotoPath
-                };
-                return View(patientDetailsViewModel);
+                    ID = patient.ID,
+                    Name = patient.Name,
+                    Surname = patient.Surname,
+                    PersonalId = patient.PersonalId
+                });
             }
+            return View(patientList);
+        }
 
-            // GET: RecipeController/Create
-            [HttpGet]
-            public IActionResult Add()
+        [HttpGet]
+        //[AllowAnonymous]
+        public IActionResult Details(int id)
+        {
+            var patient = _patientService.Get(id);
+            DetailsPatienInfoViewModel patientDetailsViewModel = new DetailsPatienInfoViewModel
             {
-                return View();
-            }
+                ID = patient.ID,
+                Name = patient.Name,
+                Surname = patient.Surname,
+                PersonalId = patient.PersonalId,
+                PhoneNumber = patient.PhoneNumber,
+                HomeAdress = patient.HomeAdress,
+                Email = patient.Email
+            };
+            return View(patientDetailsViewModel);
+        }
 
-            // POST: RecipeController/Create
-            [HttpPost]
-            [ValidateAntiForgeryToken]
-            public IActionResult Add(PatientInfo patientViewModell)
+        // GET: RecipeController/Create
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        // POST: RecipeController/Create
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public IActionResult Add(PatientInfo patientViewModell)
+        {
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
+                try
                 {
-                    try
+                    var model = new PatientModel
                     {
-                        var model = new PatientModel
-                        {
-                            
-                        };
-                        _recipeService.Create(model);
-                        return RedirectToAction("Details", new { id = model.ID });
-                    }
-                    catch
-                    {
-                        return View(recipeCreateViewModel);
-                    }
+                        ID = patientViewModell.ID,
+                        Name = patientViewModell.Name,
+                        Surname = patientViewModell.Surname,
+                        PersonalId = patientViewModell.PersonalId,
+                        PhoneNumber = patientViewModell.PhoneNumber,
+                        HomeAdress = patientViewModell.HomeAdress,
+                        Email = patientViewModell.Email
+                    };
+                    _patientService.Create(model);
+                    return RedirectToAction("Details", new { id = model.ID });
                 }
-                else
+                catch
                 {
-                    return View(recipeCreateViewModel);
+                    return View(patientViewModell);
                 }
             }
-
-            // GET: RecipeController/Edit/5
-            [HttpGet]
-            public IActionResult Edit(int id)
+            else
             {
-
-                var itemRecipe = _recipeService.Get(id);
-                RecipeEditViewModel recipeEditViewModel = new RecipeEditViewModel
-                {
-                    ID = itemRecipe.ID,
-                    Description = itemRecipe.Description,
-                    Ingredients = itemRecipe.Ingredients,
-                    Name = itemRecipe.Name,
-                    Preparation = itemRecipe.Preparation,
-                    PreparationTime = itemRecipe.PreparationTime,
-                    ExistingPhotoPath = itemRecipe.PhotoPath
-                };
-                return View(recipeEditViewModel);
+                return View(patientViewModell);
             }
+        }
 
-            // POST: RecipeController/Edit/5
-            [HttpPost]
-            [ValidateAntiForgeryToken]
-            public IActionResult Edit(int id, RecipeEditViewModel recipeEditViewModel)
+        // GET: RecipeController/Edit/5
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+
+            var patient = _patientService.Get(id);
+            EditPatientInfo editPatient = new EditPatientInfo
             {
-                if (ModelState.IsValid)
-                {
-                    try
-                    {
-                        var recipeModel = _recipeService.Get(recipeEditViewModel.ID);
-                        recipeModel.ID = recipeEditViewModel.ID;
-                        recipeModel.Description = recipeEditViewModel.Description;
-                        recipeModel.Ingredients = recipeEditViewModel.Ingredients;
-                        recipeModel.Name = recipeEditViewModel.Name;
-                        recipeModel.Preparation = recipeEditViewModel.Preparation;
-                        recipeModel.PreparationTime = recipeEditViewModel.PreparationTime;
-                        if (recipeEditViewModel.Photo != null)
-                        {
-                            if (recipeEditViewModel.ExistingPhotoPath != null)
-                            {
-                                string fileToDeletePath = Path.Combine(_hostingEnvironment.WebRootPath, "images",
-                                    recipeEditViewModel.ExistingPhotoPath);
-                                System.IO.File.Delete(fileToDeletePath);
-                            }
+                ID = patient.ID,
+                Name = patient.Name,
+                Surname = patient.Surname,
+                PersonalId = patient.PersonalId,
+                PhoneNumber = patient.PhoneNumber,
+                HomeAdress = patient.HomeAdress,
+                Email = patient.Email
+            };
+            return View(editPatient);
+        }
 
-                            string uniqueFileName = null;
-                            string uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
-                            uniqueFileName = Guid.NewGuid().ToString() + "_" + recipeEditViewModel.Photo.FileName;
-                            string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                            using (var fileStream = new FileStream(filePath, FileMode.Create))
-                            {
-                                recipeEditViewModel.Photo.CopyTo(fileStream);
-                            }
-
-                            recipeModel.PhotoPath = uniqueFileName;
-                        }
-
-                        _recipeService.Update(recipeModel);
-                        return RedirectToAction("Details", new { id = recipeEditViewModel.ID });
-                    }
-                    catch
-                    {
-                        return View(recipeEditViewModel);
-                    }
-                }
-                else
-                {
-                    return View(recipeEditViewModel);
-                }
-            }
-
-            // GET: RecipeController/Delete/5
-            [HttpGet]
-            public IActionResult Remove(int id)
+        // POST: RecipeController/Edit/5
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, EditPatientInfo editPatient)
+        {
+            if (ModelState.IsValid)
             {
-                var isOkToDelete = _recipeService.CheckBeforeDelete(id);
-                var deleteRecipe = _recipeService.Get(id);
-                RecipeDeleteViewModel recipeDeleteViewModel = new RecipeDeleteViewModel
+                try
                 {
-                    ID = deleteRecipe.ID,
-                    Name = deleteRecipe.Name,
-                    Description = deleteRecipe.Description,
-                    IsOkToDelete = isOkToDelete
-                };
-                if (isOkToDelete == true)
-                {
-                    ViewBag.CheckMsg = "Można bezpiecznie usunąć przepis.";
-                }
-                else
-                {
-                    ViewBag.CheckMsg = "Nie można usunąć przepisu, ponieważ jest wykorzystywany już w planie żywieniowym!";
-                }
-                return View(recipeDeleteViewModel);
-            }
+                    var patient = _patientService.Get(editPatient.ID);
+                    patient.ID = editPatient.ID;
+                    patient.Name = editPatient.Name;
+                    patient.Surname = editPatient.Surname;
+                    patient.PersonalId = editPatient.PersonalId;
+                    patient.PhoneNumber = editPatient.PhoneNumber;
+                    patient.HomeAdress = editPatient.HomeAdress;
+                    patient.Email = editPatient.Email;
 
-            // POST: RecipeController/Delete/5
-            [HttpPost]
-            [ValidateAntiForgeryToken]
-            public IActionResult ConfirmRemove(int id)
-            {
-                _recipeService.Delete(id);
-                return RedirectToAction(nameof(List));
+                    _patientService.Update(patient);
+                    return RedirectToAction("Details", new { id = editPatient.ID });
+                }
+                catch
+                {
+                    return View(editPatient);
+                }
             }
+            else
+            {
+                return View(editPatient);
+            }
+        }
+
+        // GET: RecipeController/Delete/5
+        [HttpGet]
+        public IActionResult Remove(int id)
+        {
+            var isOkToDelete = _patientService.CheckBeforeDelete(id);
+            var deletePatient = _patientService.Get(id);
+            DeletePatientInfoViewModel patientDelete = new DeletePatientInfoViewModel
+            {
+                ID = deletePatient.ID,
+                Name = deletePatient.Name,
+                Surname = deletePatient.Surname,
+                PersonalId = deletePatient.PersonalId,
+                IsOkToDelete = isOkToDelete
+            };
+            if (isOkToDelete == true)
+            {
+                ViewBag.CheckMsg = "Można bezpiecznie usunąć Pacjenta.";
+            }
+            else
+            {
+                ViewBag.CheckMsg = "Nie można usunąć Pacjenta, ponieważ jest zajestrowany gdzieindziej!";
+            }
+            return View(patientDelete);
+        }
+
+        // POST: RecipeController/Delete/5
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public IActionResult ConfirmRemove(int id)
+        {
+            _patientService.Delete(id);
+            return RedirectToAction(nameof(List));
         }
     }
 }
+

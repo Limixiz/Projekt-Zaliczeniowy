@@ -8,6 +8,7 @@ namespace Form_App.Models.DataBaseModel
 {
     public class TherapyModel
     {
+        public int ID { get; set; }
         [Required]
         public string Review { get; set; }
 #nullable enable                

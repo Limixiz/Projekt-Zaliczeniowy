@@ -177,3 +177,8 @@ D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App
 D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\obj\Debug\netcoreapp3.1\Form-App.csproj.CoreCompileInputs.cache
 D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\obj\Debug\netcoreapp3.1\Form-App.MvcApplicationPartsAssemblyInfo.cache
+D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\bin\Debug\netcoreapp3.1\appsettings.xml
+D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Details.cshtml.g.cs
+D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Edit.cshtml.g.cs
+D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Remove.cshtml.g.cs
+D:\Programowanie\Repozytoria GITHUB\Projekt-Zaliczeniowy\FM-Patient-Register-App\Form-App\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Add.cshtml.g.cs
