@@ -1,12 +1,9 @@
 ﻿using Form_App.Models.DataBaseModel;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Form_App.Services.Interfaces
 {
-    interface IPatientService
+    public interface IPatientService
     {
         bool Create(PatientModel patient);
         PatientModel Get(int id);

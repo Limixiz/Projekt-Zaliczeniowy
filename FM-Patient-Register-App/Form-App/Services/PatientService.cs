@@ -1,10 +1,8 @@
 ﻿using Form_App.Context;
 using Form_App.Models.DataBaseModel;
 using Form_App.Services.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Form_App.Services
 {
@@ -16,6 +14,7 @@ namespace Form_App.Services
         {
             _context = context;
         }
+
         public bool CheckBeforeDelete(int id)
         {
             //var recipeCheck = _context.RecipePlans.Where(rp => rp.RecipeID == id).ToList();

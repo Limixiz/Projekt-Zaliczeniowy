@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Form_App.Models.DataBaseModel;
 using Form_App.Services.Interfaces;
 using Form_App.ViewModels;
@@ -19,13 +16,13 @@ namespace Form_App.Controllers
         private readonly IPatientService _patientService;
         private readonly UserManager<IdentityUser> _userManager;
 
-        private PatientController(IPatientService patientService, UserManager<IdentityUser> userManager)
+        public PatientController(IPatientService patientService, UserManager<IdentityUser> userManager)
         {
             _patientService = patientService;
             _userManager = userManager;
         }
 
-        
+
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Index()

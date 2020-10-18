@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Form_App.Context;
+using Form_App.Services;
+using Form_App.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +34,8 @@ namespace Form_App
                 var config = Configuration["ConnectionString"];
                 builder.UseSqlServer(config);
             });
+
+            services.AddTransient<IPatientService, PatientService>();
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<Form_AppContext>();
             
             services.AddControllersWithViews();
