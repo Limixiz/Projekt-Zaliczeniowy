@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<root>
-  <ConnectionString>Data Source=.\SQLEXPRESS;Initial Catalog=Form_AppContext;Integrated Security=True</ConnectionString>
-</root>
