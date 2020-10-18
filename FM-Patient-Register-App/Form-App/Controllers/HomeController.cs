@@ -14,7 +14,7 @@ namespace Form_App.Controllers
         public IActionResult Index()
         {
 
-            return RedirectToAction("Add", "Patient");
+            return RedirectToAction("Register", "Account");
 
 
         }
