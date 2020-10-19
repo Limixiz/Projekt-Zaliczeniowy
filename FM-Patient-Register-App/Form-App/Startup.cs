@@ -18,12 +18,10 @@ namespace Form_App
 {
     public class Startup
     {
-        protected IConfigurationRoot Configuration;
-        public Startup()
+        protected IConfiguration Configuration;
+        public Startup(IConfiguration configuration)
         {
-            var configurationBuilder = new ConfigurationBuilder();
-            configurationBuilder.AddXmlFile("appsettings.xml");
-            Configuration = configurationBuilder.Build();
+            Configuration = configuration;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -31,7 +29,7 @@ namespace Form_App
         {
             services.AddDbContext<Form_AppContext>(builder =>
             {
-                var config = Configuration["ConnectionString"];
+                var config = Configuration.GetConnectionString("Default");
                 builder.UseSqlServer(config);
             });
 
