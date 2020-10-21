@@ -49,25 +49,6 @@ namespace Form_App.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Patients",
-                columns: table => new
-                {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Created = table.Column<DateTime>(nullable: false),
-                    Name = table.Column<string>(nullable: false),
-                    Surname = table.Column<string>(nullable: false),
-                    PersonalId = table.Column<string>(maxLength: 11, nullable: false),
-                    PhoneNumber = table.Column<string>(nullable: false),
-                    HomeAdress = table.Column<string>(nullable: false),
-                    Email = table.Column<string>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Patients", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Therapies",
                 columns: table => new
                 {
@@ -78,7 +59,7 @@ namespace Form_App.Migrations
                     RangeOfMotion = table.Column<string>(nullable: true),
                     VasScale = table.Column<string>(nullable: true),
                     Tests = table.Column<int>(nullable: true),
-                    Therapy = table.Column<string>(nullable: false),
+                    TherapyTecnics = table.Column<string>(nullable: false),
                     Recommendation = table.Column<string>(nullable: true),
                     AdisionalInfo = table.Column<string>(nullable: true)
                 },
@@ -193,6 +174,32 @@ namespace Form_App.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Patients",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Created = table.Column<DateTime>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    Surname = table.Column<string>(nullable: false),
+                    PersonalId = table.Column<string>(maxLength: 11, nullable: false),
+                    PhoneNumber = table.Column<string>(nullable: false),
+                    HomeAdress = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    ApplicationUserID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Patients", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Patients_AspNetUsers_ApplicationUserID",
+                        column: x => x.ApplicationUserID,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -231,6 +238,11 @@ namespace Form_App.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Patients_ApplicationUserID",
+                table: "Patients",
+                column: "ApplicationUserID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

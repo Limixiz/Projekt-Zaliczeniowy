@@ -5,16 +5,16 @@ namespace Form_App.Services.Interfaces
 {
     public interface IPatientService
     {
-        bool Create(PatientModel patient);
-        PatientModel Get(int id);
-        IList<PatientModel> GetAll();
+        bool Create(Patient patient);
+        Patient Get(int id);
+        IList<Patient> GetAll();
         public int GetNumberOfUserPatients(string userName);
-        bool Update(PatientModel patient);
+        bool Update(Patient patient);
         public bool CheckBeforeDelete(int id);
         bool Delete(int id);
         public int CountAllPatients(int userId);
 
-        public IList<PatientModel> GetAllByLoggedUser(string loggedUser);
-        public IList<PatientModel> SearchAllBy(string SearchString);
+        public IList<Patient> GetAllByLoggedUser(string loggedUser);
+        public IList<Patient> SearchAllBy(string SearchString);
     }
 }

@@ -28,7 +28,7 @@ namespace Form_App.Services
             return numberOfPatients;
         }
 
-        public bool Create(PatientModel patient)
+        public bool Create(Patient patient)
         {
             _context.Patients.Add(patient);
             return _context.SaveChanges() > 0;
@@ -44,19 +44,19 @@ namespace Form_App.Services
             return _context.SaveChanges() > 0;
         }
 
-        public PatientModel Get(int id)
+        public Patient Get(int id)
         {
             return _context.Patients.SingleOrDefault(g => g.ID == id);
         }
 
-        public IList<PatientModel> GetAll()
+        public IList<Patient> GetAll()
         {
             return _context.Patients.ToList();
         }
 
-        public IList<PatientModel> GetAllByLoggedUser(string loggedUser)
+        public IList<Patient> GetAllByLoggedUser(string loggedUser)
         {
-            return _context.Patients.Where(x => x.Name == loggedUser).ToList();
+            return _context.Patients.Where(x => x.ApplicationUser.UserName == loggedUser).ToList();
         }
 
         public int GetNumberOfUserPatients(string userName)
@@ -64,13 +64,13 @@ namespace Form_App.Services
             return _context.Patients.Where(x => x.Name == userName).Count();
         }
 
-        public IList<PatientModel> SearchAllBy(string SearchString)
+        public IList<Patient> SearchAllBy(string SearchString)
         {
             var test = _context.Patients.Where(r => r.Name.Contains(SearchString) || r.PersonalId.Contains(SearchString)).ToList();
             return test;
         }
 
-        public bool Update(PatientModel patient)
+        public bool Update(Patient patient)
         {
             _context.Patients.Update(patient);
             return _context.SaveChanges() > 0;

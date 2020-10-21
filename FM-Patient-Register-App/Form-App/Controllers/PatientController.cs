@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Form_App.Models.DataBaseModel;
 using Form_App.Services.Interfaces;
 using Form_App.ViewModels;
@@ -70,13 +71,14 @@ namespace Form_App.Controllers
         // POST: RecipeController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Add(PatientInfo patientViewModell)
+        public async Task<IActionResult> Add(PatientInfo patientViewModell)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    var model = new PatientModel
+                    var user = await _userManager.FindByNameAsync(User.Identity.Name);
+                    var patientModel = new Patient
                     {
                         ID = patientViewModell.ID,
                         Name = patientViewModell.Name,
@@ -84,10 +86,13 @@ namespace Form_App.Controllers
                         PersonalId = patientViewModell.PersonalId,
                         PhoneNumber = patientViewModell.PhoneNumber,
                         HomeAdress = patientViewModell.HomeAdress,
-                        Email = patientViewModell.Email
+                        Email = patientViewModell.Email,
+                        Created = DateTime.Now,
+                        ApplicationUserID = user.Id
                     };
-                    _patientService.Create(model);
-                    return RedirectToAction("Details", new { id = model.ID });
+                    _patientService.Create(patientModel);
+
+                    return RedirectToAction("Details", new { id = patientModel.ID });
                 }
                 catch (Exception exception)
                 {

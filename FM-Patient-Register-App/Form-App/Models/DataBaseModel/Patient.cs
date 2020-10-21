@@ -1,14 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Form_App.Models.DataBaseModel
 {
-    public class PatientModel
+    public class Patient
     {
         public int ID { get; set; }
 
@@ -32,5 +27,9 @@ namespace Form_App.Models.DataBaseModel
 
         [Required]
         public string Email { get; set; }
+
+        public int ApplicationUserID { get; set; }
+
+        public ApplicationUser ApplicationUser { get; set; }
     }
 }

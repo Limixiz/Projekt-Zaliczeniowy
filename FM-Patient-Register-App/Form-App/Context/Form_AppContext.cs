@@ -10,8 +10,8 @@ namespace Form_App.Context
         {
         }
 
-        public DbSet<PatientModel> Patients { get; set; }
+        public DbSet<Patient> Patients { get; set; }
 
-        public DbSet<TherapyModel> Therapies { get; set; }
+        public DbSet<Therapy> Therapies { get; set; }
     }
 }
