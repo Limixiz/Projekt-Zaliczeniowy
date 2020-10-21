@@ -11,14 +11,18 @@ namespace Form_App.ViewModels
         
         [Required]
         public string Name { get; set; }
+
         [Required]
         public string Surname { get; set; }
+
         [Required(ErrorMessage = "The email address is required")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
+
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
         [Required]
         [Compare("Password")]
         [DataType(DataType.Password)]

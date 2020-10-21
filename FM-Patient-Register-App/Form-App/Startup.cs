@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace Form_App
 {
@@ -30,7 +31,18 @@ namespace Form_App
 
             services.AddTransient<IPatientService, PatientService>();
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<Form_AppContext>();
-            
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                // Cookie settings
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(double.Parse(Configuration["Identity:ExpireTimeInMinutes"]));
+
+                options.LoginPath = "/Account/Login";
+                options.AccessDeniedPath = "/Home/Index";
+                options.SlidingExpiration = true;
+            });
+
             services.AddControllersWithViews();
         }
 
@@ -52,6 +64,7 @@ namespace Form_App
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

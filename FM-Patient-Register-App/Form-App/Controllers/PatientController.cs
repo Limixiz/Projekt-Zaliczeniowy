@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Form_App.Models.DataBaseModel;
 using Form_App.Services.Interfaces;
 using Form_App.ViewModels;
@@ -10,28 +11,21 @@ using Microsoft.AspNetCore.Mvc;
 namespace Form_App.Controllers
 {
 
-    //[Authorize(Roles = "User,Admin")]
+    [Authorize(Roles = "User,Admin")]
     public class PatientController : Controller
     {
         private readonly IPatientService _patientService;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<User> _userManager;
 
-        public PatientController(IPatientService patientService, UserManager<IdentityUser> userManager)
+        public PatientController(IPatientService patientService, UserManager<User> userManager)
         {
             _patientService = patientService;
             _userManager = userManager;
         }
 
-
         [HttpGet]
-        [AllowAnonymous]
+        //[ValidateAntiForgeryToken]
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        [HttpGet]
-        public IActionResult List()
         {
             var patientsByLoggedUserList = _patientService.GetAllByLoggedUser(User.Identity.Name);
             List<PatientListViewModel> patientList = new List<PatientListViewModel>();
@@ -49,7 +43,7 @@ namespace Form_App.Controllers
         }
 
         [HttpGet]
-        //[AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public IActionResult Details(int id)
         {
             var patient = _patientService.Get(id);
@@ -75,7 +69,7 @@ namespace Form_App.Controllers
 
         // POST: RecipeController/Create
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public IActionResult Add(PatientInfo patientViewModell)
         {
             if (ModelState.IsValid)
@@ -95,7 +89,7 @@ namespace Form_App.Controllers
                     _patientService.Create(model);
                     return RedirectToAction("Details", new { id = model.ID });
                 }
-                catch
+                catch(Exception exception)
                 {
                     return View(patientViewModell);
                 }
@@ -108,11 +102,12 @@ namespace Form_App.Controllers
 
         // GET: RecipeController/Edit/5
         [HttpGet]
+        [ValidateAntiForgeryToken]
         public IActionResult Edit(int id)
         {
 
             var patient = _patientService.Get(id);
-            EditPatientInfo editPatient = new EditPatientInfo
+            var patientInfo = new PatientInfo
             {
                 ID = patient.ID,
                 Name = patient.Name,
@@ -122,38 +117,38 @@ namespace Form_App.Controllers
                 HomeAdress = patient.HomeAdress,
                 Email = patient.Email
             };
-            return View(editPatient);
+            return View(patientInfo);
         }
 
         // POST: RecipeController/Edit/5
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, EditPatientInfo editPatient)
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(PatientInfo patientInfo)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    var patient = _patientService.Get(editPatient.ID);
-                    patient.ID = editPatient.ID;
-                    patient.Name = editPatient.Name;
-                    patient.Surname = editPatient.Surname;
-                    patient.PersonalId = editPatient.PersonalId;
-                    patient.PhoneNumber = editPatient.PhoneNumber;
-                    patient.HomeAdress = editPatient.HomeAdress;
-                    patient.Email = editPatient.Email;
+                    var patient = _patientService.Get(patientInfo.ID);
+                    patient.ID = patientInfo.ID;
+                    patient.Name = patientInfo.Name;
+                    patient.Surname = patientInfo.Surname;
+                    patient.PersonalId = patientInfo.PersonalId;
+                    patient.PhoneNumber = patientInfo.PhoneNumber;
+                    patient.HomeAdress = patientInfo.HomeAdress;
+                    patient.Email = patientInfo.Email;
 
                     _patientService.Update(patient);
-                    return RedirectToAction("Details", new { id = editPatient.ID });
+                    return RedirectToAction("Details", new { id = patientInfo.ID });
                 }
                 catch
                 {
-                    return View(editPatient);
+                    return View(patientInfo);
                 }
             }
             else
             {
-                return View(editPatient);
+                return View(patientInfo);
             }
         }
 
@@ -184,11 +179,11 @@ namespace Form_App.Controllers
 
         // POST: RecipeController/Delete/5
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public IActionResult ConfirmRemove(int id)
         {
             _patientService.Delete(id);
-            return RedirectToAction(nameof(List));
+            return RedirectToAction(nameof(Index));
         }
     }
 }

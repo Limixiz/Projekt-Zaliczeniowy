@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Form_App.Models.DataBaseModel;
 using Form_App.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -11,13 +12,13 @@ namespace Form_App.Controllers
     [Authorize(Roles = "User,Admin")]
     public class AccountController : Controller
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<User> _userManager;
+        private readonly RoleManager<User> _roleManager;
 
-        public AccountController(SignInManager<IdentityUser> signInManager,
-            UserManager<IdentityUser> userManager,
-            RoleManager<IdentityRole> roleManager)
+        public AccountController(SignInManager<User> signInManager,
+            UserManager<User> userManager,
+            RoleManager<User> roleManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
@@ -35,7 +36,7 @@ namespace Form_App.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Dashboard", "Index");
+                return RedirectToAction("Home", "Index");
             }
             else
             {
@@ -109,7 +110,7 @@ namespace Form_App.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Dashboard");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -127,7 +128,7 @@ namespace Form_App.Controllers
                     (model.Login, model.Password, model.RememberMe, false);
                 if (login.Succeeded)
                 {
-                    return RedirectToAction("Index", "Dashboard");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {

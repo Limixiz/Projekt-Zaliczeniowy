@@ -13,10 +13,7 @@ namespace Form_App.Controllers
     {
         public IActionResult Index()
         {
-
-            return RedirectToAction("Register", "Account");
-
-
+            return View();            
         }
 
         public IActionResult Error(string msg)
