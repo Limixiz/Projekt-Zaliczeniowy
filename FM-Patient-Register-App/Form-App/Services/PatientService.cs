@@ -22,9 +22,9 @@ namespace Form_App.Services
              return true;
         }
 
-        public int CountAllPatients(string loggedUser)
+        public int CountAllPatients(int userId)
         {
-            var numberOfPatients = _context.Patients.Where(x => x.UserId == loggedUser).Count();
+            var numberOfPatients = _context.Patients.Where(x => x.ID == userId).Count();
             return numberOfPatients;
         }
 
@@ -56,12 +56,12 @@ namespace Form_App.Services
 
         public IList<PatientModel> GetAllByLoggedUser(string loggedUser)
         {
-            return _context.Patients.Where(x => x.IdentityUser.UserName == loggedUser).ToList();
+            return _context.Patients.Where(x => x.Name == loggedUser).ToList();
         }
 
         public int GetNumberOfUserPatients(string userName)
         {
-            return _context.Patients.Where(x => x.IdentityUser.UserName == userName).Count();
+            return _context.Patients.Where(x => x.Name == userName).Count();
         }
 
         public IList<PatientModel> SearchAllBy(string SearchString)

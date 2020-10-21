@@ -8,7 +8,7 @@ namespace Form_App.ViewModels
 {
     public class EditUserViewModel
     {
-        public string ID { get; set; }
+        public int ID { get; set; }
 
         [Required]
         public string Name { get; set; }

@@ -1,16 +1,17 @@
 ﻿using Form_App.Models.DataBaseModel;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Form_App.ViewModels.PatientsInformationModels;
 
 namespace Form_App.Context
 {
-    public class Form_AppContext : IdentityDbContext
+    public class Form_AppContext : IdentityDbContext<ApplicationUser, ApplicationRole, int>
     {
         public Form_AppContext(DbContextOptions<Form_AppContext> options) : base(options)
         {
         }
+
         public DbSet<PatientModel> Patients { get; set; }
+
         public DbSet<TherapyModel> Therapies { get; set; }
     }
 }

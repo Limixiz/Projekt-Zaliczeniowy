@@ -15,9 +15,9 @@ namespace Form_App.Controllers
     public class PatientController : Controller
     {
         private readonly IPatientService _patientService;
-        private readonly UserManager<User> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public PatientController(IPatientService patientService, UserManager<User> userManager)
+        public PatientController(IPatientService patientService, UserManager<ApplicationUser> userManager)
         {
             _patientService = patientService;
             _userManager = userManager;
@@ -89,7 +89,7 @@ namespace Form_App.Controllers
                     _patientService.Create(model);
                     return RedirectToAction("Details", new { id = model.ID });
                 }
-                catch(Exception exception)
+                catch (Exception exception)
                 {
                     return View(patientViewModell);
                 }

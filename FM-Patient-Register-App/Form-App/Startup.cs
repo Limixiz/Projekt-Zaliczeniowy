@@ -1,4 +1,5 @@
 using Form_App.Context;
+using Form_App.Models.DataBaseModel;
 using Form_App.Services;
 using Form_App.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -30,7 +31,7 @@ namespace Form_App
             });
 
             services.AddTransient<IPatientService, PatientService>();
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<Form_AppContext>();
+            services.AddIdentity<ApplicationUser, ApplicationRole>().AddEntityFrameworkStores<Form_AppContext>();
 
             services.ConfigureApplicationCookie(options =>
             {

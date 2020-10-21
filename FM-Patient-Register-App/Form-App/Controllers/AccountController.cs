@@ -12,13 +12,14 @@ namespace Form_App.Controllers
     [Authorize(Roles = "User,Admin")]
     public class AccountController : Controller
     {
-        private readonly SignInManager<User> _signInManager;
-        private readonly UserManager<User> _userManager;
-        private readonly RoleManager<User> _roleManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<ApplicationRole> _roleManager;
 
-        public AccountController(SignInManager<User> signInManager,
-            UserManager<User> userManager,
-            RoleManager<User> roleManager)
+        public AccountController(
+            SignInManager<ApplicationUser> signInManager,
+            UserManager<ApplicationUser> userManager,
+            RoleManager<ApplicationRole> roleManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
@@ -53,7 +54,7 @@ namespace Form_App.Controllers
                 var isUserExist = await _userManager.FindByNameAsync(viewModel.Email);
                 if (isUserExist == null)
                 {
-                    var user = new IdentityUser(viewModel.Email) { Email = viewModel.Email };
+                    var user = new ApplicationUser(viewModel.Email) { Email = viewModel.Email };
                     var result = await _userManager.CreateAsync(user, viewModel.Password);
                     if (result.Succeeded)
                     {
@@ -69,7 +70,7 @@ namespace Form_App.Controllers
                             }
                             else
                             {
-                                var identityRole = new IdentityRole("User");
+                                var identityRole = new ApplicationRole("User");
                                 var createResult = await _roleManager.CreateAsync(identityRole);
                                 if (createResult.Succeeded)
                                 {

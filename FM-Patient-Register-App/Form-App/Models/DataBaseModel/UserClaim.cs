@@ -2,7 +2,7 @@
 
 namespace Form_App.Models.DataBaseModel
 {
-    public class User : IdentityUser<int>
+    public class UserClaim : IdentityUserClaim<int>
     {
     }
 }
