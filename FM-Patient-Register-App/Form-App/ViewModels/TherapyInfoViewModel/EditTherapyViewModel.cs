@@ -31,6 +31,6 @@ namespace Form_App.ViewModels.TherapyInfoViewModel
         [Display(Name = "Zalecenia")]
         public string Recommendation { get; set; }
         [Display(Name = "Informacje dodatkowe")]
-        public string AdisionalInfo { get; set; }
+        public string AdditionalInfo { get; set; }
     }
 }

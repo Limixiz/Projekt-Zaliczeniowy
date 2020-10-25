@@ -37,7 +37,7 @@ namespace Form_App.ViewModels.TherapyInfoViewModel
         public string Recommendation { get; set; }
 
         [Display(Name = "Informacje dodatkowe")]
-        public string AdisionalInfo { get; set; }
+        public string AdditionalInfo { get; set; }
         
         [Required(ErrorMessage = "Należy wybrać pacjenta")]
         public int PatientId { get; set; }

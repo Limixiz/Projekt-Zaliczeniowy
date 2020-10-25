@@ -24,7 +24,7 @@ namespace Form_App.Models.DataBaseModel
 
         public string Recommendation { get; set; }
 
-        public string AdisionalInfo { get; set; }
+        public string AdditionalInfo { get; set; }
 
         public DateTime CreationDate { get; set; }
 

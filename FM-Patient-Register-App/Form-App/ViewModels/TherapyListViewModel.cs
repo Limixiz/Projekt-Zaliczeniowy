@@ -26,6 +26,6 @@ namespace Form_App.ViewModels
 
         public string Recommendation { get; set; }
 
-        public string AdisionalInfo { get; set; }
+        public string AdditionalInfo { get; set; }
     }
 }

@@ -48,7 +48,7 @@ namespace Form_App.Controllers
                     Tests = therapy.Tests,
                     TherapyTecnics = therapy.TherapyTecnics,
                     Recommendation = therapy.Recommendation,
-                    AdisionalInfo = therapy.AdisionalInfo
+                    AdditionalInfo = therapy.AdditionalInfo
                 });
             }
             return View(therapyList);
@@ -69,7 +69,7 @@ namespace Form_App.Controllers
                 Tests = therapy.Tests,
                 TherapyTecnics = therapy.TherapyTecnics,
                 Recommendation = therapy.Recommendation,
-                AdisionalInfo = therapy.AdisionalInfo
+                AdditionalInfo = therapy.AdditionalInfo
             };
             return View(therapyDetailsViewModel);
         }
@@ -107,7 +107,7 @@ namespace Form_App.Controllers
                         Tests = therapyViewModel.Tests,
                         TherapyTecnics = therapyViewModel.TherapyTecnics,
                         Recommendation = therapyViewModel.Recommendation,
-                        AdisionalInfo = therapyViewModel.AdisionalInfo,
+                        AdditionalInfo = therapyViewModel.AdditionalInfo,
                         CreationDate = DateTime.Now,
                         PatientID = therapyViewModel.PatientId
                     };
@@ -143,7 +143,7 @@ namespace Form_App.Controllers
                 Tests = therapy.Tests,
                 TherapyTecnics = therapy.TherapyTecnics,
                 Recommendation = therapy.Recommendation,
-                AdisionalInfo = therapy.AdisionalInfo
+                AdditionalInfo = therapy.AdditionalInfo
 
             };
             return View(therapyEdit);
@@ -167,7 +167,7 @@ namespace Form_App.Controllers
                     therapy.Tests = therapy.Tests;
                     therapy.TherapyTecnics = therapy.TherapyTecnics;
                     therapy.Recommendation = therapy.Recommendation;
-                    therapy.AdisionalInfo = therapy.AdisionalInfo;
+                    therapy.AdditionalInfo = therapy.AdditionalInfo;
 
                     _therapyService.Update(therapy);
                     return RedirectToAction("Details", new { id = therapyVewModel.ID });
