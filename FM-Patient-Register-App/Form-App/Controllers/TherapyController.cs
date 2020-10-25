@@ -82,7 +82,7 @@ namespace Form_App.Controllers
         // POST: RecipeController/Create
         [HttpPost]
 
-        public async Task<IActionResult> Add(AddTherapyVewModel therapyViewModel)
+        public IActionResult Add(AddTherapyVewModel therapyViewModel)
         {
             if (ModelState.IsValid)
             {
@@ -99,6 +99,7 @@ namespace Form_App.Controllers
                         TherapyTecnics = therapyViewModel.TherapyTecnics,
                         Recommendation = therapyViewModel.Recommendation,
                         AdisionalInfo = therapyViewModel.AdisionalInfo,
+                        CreationDate = DateTime.Now,
                         PatientID = therapyViewModel.PatientId
                     };
                     _therapyService.Create(therapyModel);

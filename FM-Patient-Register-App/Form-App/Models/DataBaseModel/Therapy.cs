@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Form_App.Models.DataBaseModel
 {
@@ -24,6 +25,8 @@ namespace Form_App.Models.DataBaseModel
         public string Recommendation { get; set; }
 
         public string AdisionalInfo { get; set; }
+
+        public DateTime CreationDate { get; set; }
 
         public int PatientID { get; set; }
 
