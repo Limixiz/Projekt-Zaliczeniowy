@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Form_App.Migrations
 {
     [DbContext(typeof(Form_AppContext))]
-    [Migration("20201021194129_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20201025160648_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -175,6 +175,9 @@ namespace Form_App.Migrations
                     b.Property<string>("Disorder")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("PatientID")
+                        .HasColumnType("int");
+
                     b.Property<string>("RangeOfMotion")
                         .HasColumnType("nvarchar(max)");
 
@@ -185,17 +188,19 @@ namespace Form_App.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Tests")
-                        .HasColumnType("int");
+                    b.Property<string>("Tests")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TherapyTecnics")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("VasScale")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("VasScale")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("PatientID");
 
                     b.ToTable("Therapies");
                 });
@@ -306,6 +311,15 @@ namespace Form_App.Migrations
                     b.HasOne("Form_App.Models.DataBaseModel.ApplicationUser", "ApplicationUser")
                         .WithMany("Patients")
                         .HasForeignKey("ApplicationUserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Form_App.Models.DataBaseModel.Therapy", b =>
+                {
+                    b.HasOne("Form_App.Models.DataBaseModel.Patient", "Patient")
+                        .WithMany("Therapies")
+                        .HasForeignKey("PatientID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

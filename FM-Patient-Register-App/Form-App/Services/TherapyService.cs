@@ -64,7 +64,7 @@ namespace Form_App.Services
 
             //var id = ReturnUserID(loggedUser);
            // int newID = await id;
-            return _context.Therapies.Where(x => x.ApplicationUserID == id).ToList();
+            return _context.Therapies.Where(x => x.Patient.ApplicationUserID == id).ToList();
         }
 
         public int GetNumberOfUserTherapies(string userName)

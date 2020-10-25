@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Form_App.Models.DataBaseModel
@@ -31,5 +32,7 @@ namespace Form_App.Models.DataBaseModel
         public int ApplicationUserID { get; set; }
 
         public ApplicationUser ApplicationUser { get; set; }
+
+        public List<Therapy> Therapies { get; set; }
     }
 }

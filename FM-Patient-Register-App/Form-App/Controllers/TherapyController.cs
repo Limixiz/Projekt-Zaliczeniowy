@@ -47,7 +47,6 @@ namespace Form_App.Controllers
                     TherapyTecnics = therapy.TherapyTecnics,
                     Recommendation = therapy.Recommendation,
                     AdisionalInfo = therapy.AdisionalInfo
-
                 });
             }
             return View(therapyList);
@@ -89,7 +88,6 @@ namespace Form_App.Controllers
             {
                 try
                 {
-                    var user = await _userManager.FindByNameAsync(User.Identity.Name);
                     var therapyModel = new Therapy
                     {
                         ID = therapyViewModel.ID,
@@ -101,7 +99,7 @@ namespace Form_App.Controllers
                         TherapyTecnics = therapyViewModel.TherapyTecnics,
                         Recommendation = therapyViewModel.Recommendation,
                         AdisionalInfo = therapyViewModel.AdisionalInfo,
-                        ApplicationUserID = user.Id
+                        PatientID = therapyViewModel.PatientId
                     };
                     _therapyService.Create(therapyModel);
 

@@ -25,8 +25,8 @@ namespace Form_App.Models.DataBaseModel
 
         public string AdisionalInfo { get; set; }
 
-        public int ApplicationUserID { get; set; }
+        public int PatientID { get; set; }
 
-        public ApplicationUser ApplicationUser { get; set; }
+        public Patient Patient { get; set; }
     }
 }

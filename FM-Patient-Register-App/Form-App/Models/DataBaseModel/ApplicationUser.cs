@@ -14,7 +14,5 @@ namespace Form_App.Models.DataBaseModel
         }
 
         public List<Patient> Patients { get; set; }
-
-        public List<Therapy> Therapies { get; set; }
     }
 }

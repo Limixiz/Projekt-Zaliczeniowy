@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Form_App.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -46,26 +46,6 @@ namespace Form_App.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Therapies",
-                columns: table => new
-                {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Review = table.Column<string>(nullable: false),
-                    Disorder = table.Column<string>(nullable: true),
-                    RangeOfMotion = table.Column<string>(nullable: true),
-                    VasScale = table.Column<string>(nullable: true),
-                    Tests = table.Column<int>(nullable: true),
-                    TherapyTecnics = table.Column<string>(nullable: false),
-                    Recommendation = table.Column<string>(nullable: true),
-                    AdisionalInfo = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Therapies", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -200,6 +180,33 @@ namespace Form_App.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Therapies",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Review = table.Column<string>(nullable: false),
+                    Disorder = table.Column<string>(nullable: true),
+                    RangeOfMotion = table.Column<string>(nullable: true),
+                    VasScale = table.Column<int>(nullable: false),
+                    Tests = table.Column<string>(nullable: true),
+                    TherapyTecnics = table.Column<string>(nullable: false),
+                    Recommendation = table.Column<string>(nullable: true),
+                    AdisionalInfo = table.Column<string>(nullable: true),
+                    PatientID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Therapies", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Therapies_Patients_PatientID",
+                        column: x => x.PatientID,
+                        principalTable: "Patients",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -243,6 +250,11 @@ namespace Form_App.Migrations
                 name: "IX_Patients_ApplicationUserID",
                 table: "Patients",
                 column: "ApplicationUserID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Therapies_PatientID",
+                table: "Therapies",
+                column: "PatientID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -263,13 +275,13 @@ namespace Form_App.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Patients");
-
-            migrationBuilder.DropTable(
                 name: "Therapies");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Patients");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

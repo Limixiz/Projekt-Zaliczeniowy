@@ -90,6 +90,7 @@ namespace Form_App.Controllers
                         Created = DateTime.Now,
                         ApplicationUserID = user.Id
                     };
+
                     _patientService.Create(patientModel);
 
                     return RedirectToAction("Details", new { id = patientModel.ID });

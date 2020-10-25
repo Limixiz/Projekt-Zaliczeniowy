@@ -37,6 +37,6 @@ namespace Form_App.ViewModels.TherapyInfoViewModel
         [Display(Name = "Informacje dodatkowe")]
         public string AdisionalInfo { get; set; }
         
-
+        public int PatientId { get; set; }
     }
 }

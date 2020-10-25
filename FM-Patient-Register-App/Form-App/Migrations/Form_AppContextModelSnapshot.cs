@@ -170,11 +170,11 @@ namespace Form_App.Migrations
                     b.Property<string>("AdisionalInfo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ApplicationUserID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Disorder")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PatientID")
+                        .HasColumnType("int");
 
                     b.Property<string>("RangeOfMotion")
                         .HasColumnType("nvarchar(max)");
@@ -198,7 +198,7 @@ namespace Form_App.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ApplicationUserID");
+                    b.HasIndex("PatientID");
 
                     b.ToTable("Therapies");
                 });
@@ -315,9 +315,9 @@ namespace Form_App.Migrations
 
             modelBuilder.Entity("Form_App.Models.DataBaseModel.Therapy", b =>
                 {
-                    b.HasOne("Form_App.Models.DataBaseModel.ApplicationUser", "ApplicationUser")
+                    b.HasOne("Form_App.Models.DataBaseModel.Patient", "Patient")
                         .WithMany("Therapies")
-                        .HasForeignKey("ApplicationUserID")
+                        .HasForeignKey("PatientID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
