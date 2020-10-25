@@ -9,8 +9,7 @@
 <p>
     <a asp-action="Add">Create New</a>
 </p>
-<table class="table table-striped table-bordered table-sm" cellspacing="0"
-       width="100%">
+<table class="table">
     <thead>
         <tr>
             <th>
@@ -66,53 +65,14 @@
                     @Html.DisplayFor(modelItem => item.Recommendation)
                 </td>
                 <td>
-<<<<<<< Updated upstream
                     @Html.DisplayFor(modelItem => item.AdditionalInfo)
-=======
-                    @Html.DisplayFor(modelItem => item.AdisionalInfo)
->>>>>>> Stashed changes
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-<<<<<<< Updated upstream
                     <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-=======
->>>>>>> Stashed changes
                 </td>
             </tr>
         }
     </tbody>
-<<<<<<< Updated upstream
-=======
-    <tfoot>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Review)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Disorder)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RangeOfMotion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.VasScale)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tests)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TherapyTecnics)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Recommendation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AdisionalInfo)
-            </th>
-            <th></th>
-        </tr>
-    </tfoot>
->>>>>>> Stashed changes
 </table>
