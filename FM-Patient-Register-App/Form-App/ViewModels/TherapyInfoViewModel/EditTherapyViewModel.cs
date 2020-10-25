@@ -21,15 +21,18 @@ namespace Form_App.ViewModels.TherapyInfoViewModel
         public string RangeOfMotion { get; set; }
 
         [Display(Name = "Skala Vas")]
-        public string VasScale { get; set; }
+        public int VasScale { get; set; }
 
         [Display(Name = "Testy")]
-        public int Tests { get; set; }
+        public string Tests { get; set; }
+
         [Required(ErrorMessage = "Ta rubryka jest wymagana!")]
         [Display(Name = "Zastosowana Terapia")]
-        public string Therapy { get; set; }
+        public string TherapyTecnics { get; set; }
+
         [Display(Name = "Zalecenia")]
         public string Recommendation { get; set; }
+
         [Display(Name = "Informacje dodatkowe")]
         public string AdditionalInfo { get; set; }
     }

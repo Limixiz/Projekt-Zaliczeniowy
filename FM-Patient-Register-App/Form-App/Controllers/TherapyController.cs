@@ -35,7 +35,7 @@ namespace Form_App.Controllers
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             int userId = user.Id;
             var therapiesByLoggedUserList = _therapyService.GetAllByLoggedUser(userId);
-            List<TherapyListViewModel> therapyList = new List<TherapyListViewModel>();
+            var therapyList = new List<TherapyListViewModel>();
             foreach (var therapy in therapiesByLoggedUserList)
             {
                 therapyList.Add(new TherapyListViewModel
@@ -59,7 +59,7 @@ namespace Form_App.Controllers
         public IActionResult Details(int id)
         {
             var therapy = _therapyService.Get(id);
-            DetailsTherapyViewModel therapyDetailsViewModel = new DetailsTherapyViewModel
+            var therapyDetailsViewModel = new DetailsTherapyViewModel
             {
                 ID = therapy.ID,
                 Review = therapy.Review,
@@ -79,7 +79,7 @@ namespace Form_App.Controllers
         public IActionResult Add()
         {
             var patients = _patientService.GetAllByLoggedUser(User.Identity.Name);
-            AddTherapyVewModel addTherapyVewModel = new AddTherapyVewModel
+            var addTherapyVewModel = new AddTherapyVewModel
             {
                 Patients = patients.Select(x => new SelectListItem($"{x.Name} {x.Surname}", x.ID.ToString())).ToList()
             };
@@ -133,7 +133,7 @@ namespace Form_App.Controllers
         {
 
             var therapy = _therapyService.Get(id);
-            var therapyEdit = new AddTherapyVewModel
+            var therapyEdit = new EditTherapyViewModel
             {
                 ID = therapy.ID,
                 Review = therapy.Review,
@@ -152,7 +152,7 @@ namespace Form_App.Controllers
         // POST: RecipeController/Edit/5
         [HttpPost]
 
-        public IActionResult Edit(AddTherapyVewModel therapyVewModel)
+        public IActionResult Edit(EditTherapyViewModel therapyVewModel)
         {
             if (ModelState.IsValid)
             {

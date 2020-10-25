@@ -15,8 +15,7 @@ namespace Form_App.ViewModels.TherapyInfoViewModel
         [Required(ErrorMessage = "Ta rubryka jest wymagana!")]
         [Display(Name = "Wywiad")]
         public string Review { get; set; }
-
-      
+              
         [Display(Name = "Dolegliwości")]
         public string Disorder { get; set; }
         
