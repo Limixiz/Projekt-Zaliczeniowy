@@ -61,9 +61,6 @@ namespace Form_App.Services
 
         public IList<Therapy> GetAllByLoggedUser(int id)
         {
-
-            //var id = ReturnUserID(loggedUser);
-           // int newID = await id;
             return _context.Therapies.Where(x => x.Patient.ApplicationUserID == id).ToList();
         }
 

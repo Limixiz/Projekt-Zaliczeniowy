@@ -7,9 +7,9 @@ using Form_App.Services.Interfaces;
 using Form_App.ViewModels;
 using Form_App.ViewModels.TherapyInfoViewModel;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Form_App.Controllers
 {
@@ -17,12 +17,14 @@ namespace Form_App.Controllers
     public class TherapyController : Controller
     {
         private readonly ITherapyService _therapyService;
+        private readonly IPatientService _patientService;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public TherapyController(ITherapyService therapyService, UserManager<ApplicationUser> userManager)
+        public TherapyController(ITherapyService therapyService, UserManager<ApplicationUser> userManager, IPatientService patientService)
         {
             _therapyService = therapyService;
             _userManager = userManager;
+            _patientService = patientService;
         }
 
 
@@ -76,7 +78,14 @@ namespace Form_App.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            return View();
+            var patients = _patientService.GetAllByLoggedUser(User.Identity.Name);
+            AddTherapyVewModel addTherapyVewModel = new AddTherapyVewModel
+            {
+                Patients = patients.Select(x => new SelectListItem($"{x.Name} {x.Surname}", x.ID.ToString())).ToList()
+            };
+            addTherapyVewModel.Patients.Insert(0, new SelectListItem());
+
+            return View(addTherapyVewModel);
         }
 
         // POST: RecipeController/Create

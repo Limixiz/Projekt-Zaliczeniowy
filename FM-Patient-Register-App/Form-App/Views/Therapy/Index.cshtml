@@ -7,7 +7,7 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Add">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -40,38 +40,39 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Review)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Disorder)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RangeOfMotion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.VasScale)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tests)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TherapyTecnics)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Recommendation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AdisionalInfo)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Review)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Disorder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RangeOfMotion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VasScale)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tests)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TherapyTecnics)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Recommendation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdisionalInfo)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Form_App.Models.DataBaseModel;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -37,6 +39,9 @@ namespace Form_App.ViewModels.TherapyInfoViewModel
         [Display(Name = "Informacje dodatkowe")]
         public string AdisionalInfo { get; set; }
         
+        [Required(ErrorMessage = "Należy wybrać pacjenta")]
         public int PatientId { get; set; }
+
+        public List<SelectListItem> Patients { get; set; }
     }
 }
