@@ -25,11 +25,17 @@ namespace Form_App.ViewModels.TherapyInfoViewModel
 
         [Display(Name = "Testy")]
         public string Tests { get; set; }
+<<<<<<< Updated upstream
 
         [Required(ErrorMessage = "Ta rubryka jest wymagana!")]
         [Display(Name = "Zastosowana Terapia")]
         public string TherapyTecnics { get; set; }
 
+=======
+        [Required(ErrorMessage = "Ta rubryka jest wymagana!")]
+        [Display(Name = "Zastosowana Terapia")]
+        public string TherapyTecnics { get; set; }
+>>>>>>> Stashed changes
         [Display(Name = "Zalecenia")]
         public string Recommendation { get; set; }
 

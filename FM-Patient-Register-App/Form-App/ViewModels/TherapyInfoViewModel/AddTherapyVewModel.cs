@@ -23,6 +23,7 @@ namespace Form_App.ViewModels.TherapyInfoViewModel
         public string RangeOfMotion { get; set; }
         
         [Display(Name = "Skala Vas")]
+        [Range(0, 10, ErrorMessage = "Skala nie może przekroczyć wartości 0/10!")]
         public int VasScale { get; set; }
         
         [Display(Name = "Testy")]
