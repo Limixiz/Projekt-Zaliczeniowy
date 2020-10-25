@@ -80,7 +80,6 @@ namespace Form_App.Controllers
                     var user = await _userManager.FindByNameAsync(User.Identity.Name);
                     var patientModel = new Patient
                     {
-                        ID = patientViewModell.ID,
                         Name = patientViewModell.Name,
                         Surname = patientViewModell.Surname,
                         PersonalId = patientViewModell.PersonalId,
@@ -136,7 +135,6 @@ namespace Form_App.Controllers
                 try
                 {
                     var patient = _patientService.Get(patientInfo.ID);
-                    patient.ID = patientInfo.ID;
                     patient.Name = patientInfo.Name;
                     patient.Surname = patientInfo.Surname;
                     patient.PersonalId = patientInfo.PersonalId;

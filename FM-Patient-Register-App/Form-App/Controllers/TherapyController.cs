@@ -99,7 +99,6 @@ namespace Form_App.Controllers
                 {
                     var therapyModel = new Therapy
                     {
-                        ID = therapyViewModel.ID,
                         Review = therapyViewModel.Review,
                         Disorder = therapyViewModel.Disorder,
                         RangeOfMotion = therapyViewModel.RangeOfMotion,
@@ -159,15 +158,14 @@ namespace Form_App.Controllers
                 try
                 {
                     var therapy = _therapyService.Get(therapyVewModel.ID);
-                    therapy.ID = therapy.ID;
-                    therapy.Review = therapy.Review;
-                    therapy.Disorder = therapy.Disorder;
-                    therapy.RangeOfMotion = therapy.RangeOfMotion;
-                    therapy.VasScale = therapy.VasScale;
-                    therapy.Tests = therapy.Tests;
-                    therapy.TherapyTecnics = therapy.TherapyTecnics;
-                    therapy.Recommendation = therapy.Recommendation;
-                    therapy.AdditionalInfo = therapy.AdditionalInfo;
+                    therapy.Review = therapyVewModel.Review;
+                    therapy.Disorder = therapyVewModel.Disorder;
+                    therapy.RangeOfMotion = therapyVewModel.RangeOfMotion;
+                    therapy.VasScale = therapyVewModel.VasScale;
+                    therapy.Tests = therapyVewModel.Tests;
+                    therapy.TherapyTecnics = therapyVewModel.TherapyTecnics;
+                    therapy.Recommendation = therapyVewModel.Recommendation;
+                    therapy.AdditionalInfo = therapyVewModel.AdditionalInfo;
 
                     _therapyService.Update(therapy);
                     return RedirectToAction("Details", new { id = therapyVewModel.ID });
