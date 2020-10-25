@@ -4,14 +4,16 @@ using Form_App.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Form_App.Migrations
 {
     [DbContext(typeof(Form_AppContext))]
-    partial class Form_AppContextModelSnapshot : ModelSnapshot
+    [Migration("20201025165642_AdditionalInfo")]
+    partial class AdditionalInfo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
