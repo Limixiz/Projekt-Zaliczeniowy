@@ -2,85 +2,176 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Form_App.Models.DataBaseModel;
+using Form_App.Services.Interfaces;
+using Form_App.ViewModels;
+using Form_App.ViewModels.TherapyInfoViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Form_App.Controllers
 {
+    [Authorize(Roles = "User,Admin")]
     public class TherapyController : Controller
     {
-        // GET: TherapyController
-        public ActionResult Index()
+        private readonly ITherapyService _therapyService;
+        private readonly UserManager<ApplicationUser> _userManager;
+
+        public TherapyController(ITherapyService therapyService, UserManager<ApplicationUser> userManager)
+        {
+            _therapyService = therapyService;
+            _userManager = userManager;
+        }
+
+
+        [HttpGet]
+
+        public async Task<ActionResult> Index()
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            int userId = user.Id;
+            var therapiesByLoggedUserList = _therapyService.GetAllByLoggedUser(userId);
+            List<TherapyListViewModel> therapyList = new List<TherapyListViewModel>();
+            foreach (var therapy in therapiesByLoggedUserList)
+            {
+                therapyList.Add(new TherapyListViewModel
+                {
+                    ID = therapy.ID,
+                    Review = therapy.Review,
+                    Disorder = therapy.Disorder,
+                    RangeOfMotion = therapy.RangeOfMotion,
+                    VasScale = therapy.VasScale,
+                    Tests = therapy.Tests,
+                    TherapyTecnics = therapy.TherapyTecnics,
+                    Recommendation = therapy.Recommendation,
+                    AdisionalInfo = therapy.AdisionalInfo
+
+                });
+            }
+            return View(therapyList);
+        }
+
+        [HttpGet]
+
+        public IActionResult Details(int id)
+        {
+            var therapy = _therapyService.Get(id);
+            DetailsTherapyViewModel therapyDetailsViewModel = new DetailsTherapyViewModel
+            {
+                ID = therapy.ID,
+                Review = therapy.Review,
+                Disorder = therapy.Disorder,
+                RangeOfMotion = therapy.RangeOfMotion,
+                VasScale = therapy.VasScale,
+                Tests = therapy.Tests,
+                TherapyTecnics = therapy.TherapyTecnics,
+                Recommendation = therapy.Recommendation,
+                AdisionalInfo = therapy.AdisionalInfo
+            };
+            return View(therapyDetailsViewModel);
+        }
+
+        // GET: RecipeController/Create
+        [HttpGet]
+        public IActionResult Add()
         {
             return View();
         }
 
-        // GET: TherapyController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: TherapyController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: TherapyController/Create
+        // POST: RecipeController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+
+        public async Task<IActionResult> Add(AddTherapyVewModel therapyViewModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    var user = await _userManager.FindByNameAsync(User.Identity.Name);
+                    var therapyModel = new Therapy
+                    {
+                        ID = therapyViewModel.ID,
+                        Review = therapyViewModel.Review,
+                        Disorder = therapyViewModel.Disorder,
+                        RangeOfMotion = therapyViewModel.RangeOfMotion,
+                        VasScale = therapyViewModel.VasScale,
+                        Tests = therapyViewModel.Tests,
+                        TherapyTecnics = therapyViewModel.TherapyTecnics,
+                        Recommendation = therapyViewModel.Recommendation,
+                        AdisionalInfo = therapyViewModel.AdisionalInfo,
+                        ApplicationUserID = user.Id
+                    };
+                    _therapyService.Create(therapyModel);
+
+                    return RedirectToAction("Details", new { id = therapyModel.ID });
+                }
+                catch (Exception exception)
+                {
+                    return View(therapyViewModel);
+                }
             }
-            catch
+            else
             {
-                return View();
+                return View(therapyViewModel);
             }
         }
 
-        // GET: TherapyController/Edit/5
-        public ActionResult Edit(int id)
+        // GET: RecipeController/Edit/5
+        [HttpGet]
+
+        public IActionResult Edit(int id)
         {
-            return View();
+
+            var therapy = _therapyService.Get(id);
+            var therapyEdit = new AddTherapyVewModel
+            {
+                ID = therapy.ID,
+                Review = therapy.Review,
+                Disorder = therapy.Disorder,
+                RangeOfMotion = therapy.RangeOfMotion,
+                VasScale = therapy.VasScale,
+                Tests = therapy.Tests,
+                TherapyTecnics = therapy.TherapyTecnics,
+                Recommendation = therapy.Recommendation,
+                AdisionalInfo = therapy.AdisionalInfo
+
+            };
+            return View(therapyEdit);
         }
 
-        // POST: TherapyController/Edit/5
+        // POST: RecipeController/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: TherapyController/Delete/5
-        public ActionResult Delete(int id)
+        public IActionResult Edit(AddTherapyVewModel therapyVewModel)
         {
-            return View();
-        }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var therapy = _therapyService.Get(therapyVewModel.ID);
+                    therapy.ID = therapy.ID;
+                    therapy.Review = therapy.Review;
+                    therapy.Disorder = therapy.Disorder;
+                    therapy.RangeOfMotion = therapy.RangeOfMotion;
+                    therapy.VasScale = therapy.VasScale;
+                    therapy.Tests = therapy.Tests;
+                    therapy.TherapyTecnics = therapy.TherapyTecnics;
+                    therapy.Recommendation = therapy.Recommendation;
+                    therapy.AdisionalInfo = therapy.AdisionalInfo;
 
-        // POST: TherapyController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
+                    _therapyService.Update(therapy);
+                    return RedirectToAction("Details", new { id = therapyVewModel.ID });
+                }
+                catch
+                {
+                    return View(therapyVewModel);
+                }
             }
-            catch
+            else
             {
-                return View();
+                return View(therapyVewModel);
             }
         }
     }

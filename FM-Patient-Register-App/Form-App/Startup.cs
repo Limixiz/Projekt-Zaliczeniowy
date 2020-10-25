@@ -31,6 +31,7 @@ namespace Form_App
             });
 
             services.AddTransient<IPatientService, PatientService>();
+            services.AddTransient<ITherapyService, TherapyService>();
             services.AddIdentity<ApplicationUser, ApplicationRole>().AddEntityFrameworkStores<Form_AppContext>();
 
             services.ConfigureApplicationCookie(options =>

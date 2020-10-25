@@ -27,7 +27,7 @@ using Form_App.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a5c67f1a415cf160c910d2ec5ee7be2eeea484eb", @"/Views/Patient/Remove.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"41fdf81eee1fa0f35a587e308e0bbc6aa6d7d0cb", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"51464a6070e354cc89ed88a69c486c1505a50816", @"/Views/_ViewImports.cshtml")]
     public class Views_Patient_Remove : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Form_App.ViewModels.PatientsInformationModels.DeletePatientInfoViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("type", "hidden", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

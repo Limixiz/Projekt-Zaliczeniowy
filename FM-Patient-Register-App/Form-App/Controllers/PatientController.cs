@@ -25,7 +25,7 @@ namespace Form_App.Controllers
         }
 
         [HttpGet]
-        //[ValidateAntiForgeryToken]
+        
         public IActionResult Index()
         {
             var patientsByLoggedUserList = _patientService.GetAllByLoggedUser(User.Identity.Name);
@@ -44,7 +44,7 @@ namespace Form_App.Controllers
         }
 
         [HttpGet]
-        //[ValidateAntiForgeryToken]
+        
         public IActionResult Details(int id)
         {
             var patient = _patientService.Get(id);
@@ -70,7 +70,7 @@ namespace Form_App.Controllers
 
         // POST: RecipeController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> Add(PatientInfo patientViewModell)
         {
             if (ModelState.IsValid)
@@ -107,7 +107,7 @@ namespace Form_App.Controllers
 
         // GET: RecipeController/Edit/5
         [HttpGet]
-        //[ValidateAntiForgeryToken]
+        
         public IActionResult Edit(int id)
         {
 
@@ -127,7 +127,7 @@ namespace Form_App.Controllers
 
         // POST: RecipeController/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        
         public IActionResult Edit(PatientInfo patientInfo)
         {
             if (ModelState.IsValid)

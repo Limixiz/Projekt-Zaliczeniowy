@@ -13,9 +13,9 @@ namespace Form_App.Models.DataBaseModel
 
         public string RangeOfMotion { get; set; }
 
-        public string VasScale { get; set; }
+        public int VasScale { get; set; }
 
-        public int? Tests { get; set; }
+        public string Tests { get; set; }
 
         [Required(ErrorMessage = "Ta rubryka jest wymagana!")]
         [Display(Name = "Zastosowana Terapia")]
@@ -24,5 +24,9 @@ namespace Form_App.Models.DataBaseModel
         public string Recommendation { get; set; }
 
         public string AdisionalInfo { get; set; }
+
+        public int ApplicationUserID { get; set; }
+
+        public ApplicationUser ApplicationUser { get; set; }
     }
 }

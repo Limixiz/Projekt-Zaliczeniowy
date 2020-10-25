@@ -27,7 +27,7 @@ using Form_App.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7172cd019126b3893e953279455f6f78e381da68", @"/Views/Patient/Edit.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"41fdf81eee1fa0f35a587e308e0bbc6aa6d7d0cb", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"51464a6070e354cc89ed88a69c486c1505a50816", @"/Views/_ViewImports.cshtml")]
     public class Views_Patient_Edit : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Form_App.ViewModels.PatientsInformationModels.PatientInfo>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("text-danger"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

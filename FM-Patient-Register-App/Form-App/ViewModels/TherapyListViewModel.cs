@@ -4,32 +4,28 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Form_App.ViewModels.TherapyInfoViewModel
+namespace Form_App.ViewModels
 {
-    public class DetailsTherapyViewModel
+    public class TherapyListViewModel
     {
         public int ID { get; set; }
 
-        [Display(Name = "Wywiad")]
+        [Required]
         public string Review { get; set; }
 
-        [Display(Name = "Dolegliwości")]
         public string Disorder { get; set; }
 
-        [Display(Name = "Ruchomość")]
         public string RangeOfMotion { get; set; }
 
-        [Display(Name = "Skala Vas")]
         public int VasScale { get; set; }
 
-        [Display(Name = "Testy")]
         public string Tests { get; set; }
-        
-        [Display(Name = "Zastosowana Terapia")]
+
+        [Required]
         public string TherapyTecnics { get; set; }
-        [Display(Name = "Zalecenia")]
+
         public string Recommendation { get; set; }
-        [Display(Name = "Informacje dodatkowe")]
+
         public string AdisionalInfo { get; set; }
     }
 }
