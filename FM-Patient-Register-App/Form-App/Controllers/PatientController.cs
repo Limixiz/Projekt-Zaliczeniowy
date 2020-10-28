@@ -42,7 +42,7 @@ namespace Form_App.Controllers
             }
             return View(patientList);
         }
-
+        
         [HttpGet]
         
         public IActionResult Details(int id)
@@ -63,8 +63,9 @@ namespace Form_App.Controllers
 
         // GET: RecipeController/Create
         [HttpGet]
-        public IActionResult Add()
+        public IActionResult Add(int ID)
         {
+            ViewBag.Plan = _patientService.GetPatientPersonalIdByPatientId(ID);
             return View();
         }
 

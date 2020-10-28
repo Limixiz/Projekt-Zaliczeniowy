@@ -13,7 +13,7 @@ namespace Form_App.Services.Interfaces
         public bool CheckBeforeDelete(int id);
         bool Delete(int id);
         public int CountAllPatients(int userId);
-
+        public string GetPatientPersonalIdByPatientId(int patientId);
         public IList<Patient> GetAllByLoggedUser(string loggedUser);
         public IList<Patient> SearchAllBy(string SearchString);
     }

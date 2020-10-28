@@ -64,6 +64,10 @@ namespace Form_App.Services
             return _context.Patients.Where(x => x.Name == userName).Count();
         }
 
+        public string GetPatientPersonalIdByPatientId(int patientId)
+        {
+            return _context.Patients.Where(p => p.ID == patientId).Select(s => s.PersonalId).FirstOrDefault();
+        }
         public IList<Patient> SearchAllBy(string SearchString)
         {
             var test = _context.Patients.Where(r => r.Name.Contains(SearchString) || r.PersonalId.Contains(SearchString)).ToList();
