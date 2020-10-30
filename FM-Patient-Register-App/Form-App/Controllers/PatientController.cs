@@ -65,7 +65,6 @@ namespace Form_App.Controllers
         [HttpGet]
         public IActionResult Add(int ID)
         {
-            ViewBag.Plan = _patientService.GetPatientPersonalIdByPatientId(ID);
             return View();
         }
 

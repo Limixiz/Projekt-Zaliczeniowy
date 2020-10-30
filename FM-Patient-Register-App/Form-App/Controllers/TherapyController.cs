@@ -76,8 +76,9 @@ namespace Form_App.Controllers
 
         // GET: RecipeController/Create
         [HttpGet]
-        public IActionResult Add()
+        public IActionResult Add(int id)
         {
+            var patient = _patientService.Get(id);
             var patients = _patientService.GetAllByLoggedUser(User.Identity.Name);
             var addTherapyVewModel = new AddTherapyVewModel
             {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Form_App.Models.DataBaseModel
 {
@@ -30,6 +31,8 @@ namespace Form_App.Models.DataBaseModel
 
         public int PatientID { get; set; }
 
+        [ForeignKey("PatientID")]
         public Patient Patient { get; set; }
+
     }
 }

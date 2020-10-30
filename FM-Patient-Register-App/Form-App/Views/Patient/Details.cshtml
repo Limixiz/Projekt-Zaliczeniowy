@@ -1,15 +1,12 @@
 ﻿@model Form_App.ViewModels.PatientsInformationModels.DetailsPatienInfoViewModel
 
-@{
-    ViewData["Title"] = "Details";
-}
+@{ ViewData["Title"] = "Details"; }
 
 <h1>Details</h1>
 
 <div>
     <p>
-        <a asp-controller="Therapy" asp-action="Add">Nowa wizyta.</a>
-        <input type="hidden" asp-for="@Model.ID" value="@ViewContext.RouteData.Values["ID"]" />
+        <a asp-controller="Therapy" asp-route-id="@Model.ID" asp-action="Add">Nowa wizyta.</a>
     </p>
     <h4>DetailsPatienInfoViewModel</h4>
     <hr />
