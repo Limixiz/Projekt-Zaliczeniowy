@@ -40,7 +40,8 @@ namespace Form_App.ViewModels.TherapyInfoViewModel
         
         [Required(ErrorMessage = "Należy wybrać pacjenta")]
         public int PatientId { get; set; }
-
+        
         public List<SelectListItem> Patients { get; set; }
+        public bool ShowPatients { get; internal set; }
     }
 }

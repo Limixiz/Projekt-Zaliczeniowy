@@ -79,12 +79,8 @@ namespace Form_App.Controllers
         public IActionResult Add(int id)
         {
             var patient = _patientService.Get(id);
-            var patients = _patientService.GetAllByLoggedUser(User.Identity.Name);
-            var addTherapyVewModel = new AddTherapyVewModel
-            {
-                Patients = patients.Select(x => new SelectListItem($"{x.Name} {x.Surname}", x.ID.ToString())).ToList()
-            };
-            addTherapyVewModel.Patients.Insert(0, new SelectListItem());
+            var addTherapyVewModel = new AddTherapyVewModel();
+            addTherapyVewModel.PatientId = patient.ID;
 
             return View(addTherapyVewModel);
         }
@@ -92,7 +88,7 @@ namespace Form_App.Controllers
         // POST: RecipeController/Create
         [HttpPost]
 
-        public IActionResult Add(AddTherapyVewModel therapyViewModel)
+        public IActionResult Add(AddTherapyVewModel addTherapyVewModel)
         {
             if (ModelState.IsValid)
             {
@@ -100,16 +96,16 @@ namespace Form_App.Controllers
                 {
                     var therapyModel = new Therapy
                     {
-                        Review = therapyViewModel.Review,
-                        Disorder = therapyViewModel.Disorder,
-                        RangeOfMotion = therapyViewModel.RangeOfMotion,
-                        VasScale = therapyViewModel.VasScale,
-                        Tests = therapyViewModel.Tests,
-                        TherapyTecnics = therapyViewModel.TherapyTecnics,
-                        Recommendation = therapyViewModel.Recommendation,
-                        AdditionalInfo = therapyViewModel.AdditionalInfo,
+                        Review = addTherapyVewModel.Review,
+                        Disorder = addTherapyVewModel.Disorder,
+                        RangeOfMotion = addTherapyVewModel.RangeOfMotion,
+                        VasScale = addTherapyVewModel.VasScale,
+                        Tests = addTherapyVewModel.Tests,
+                        TherapyTecnics = addTherapyVewModel.TherapyTecnics,
+                        Recommendation = addTherapyVewModel.Recommendation,
+                        AdditionalInfo = addTherapyVewModel.AdditionalInfo,
                         CreationDate = DateTime.Now,
-                        PatientID = therapyViewModel.PatientId
+                        PatientID = addTherapyVewModel.PatientId
                     };
                     _therapyService.Create(therapyModel);
 
@@ -117,12 +113,12 @@ namespace Form_App.Controllers
                 }
                 catch (Exception exception)
                 {
-                    return View(therapyViewModel);
+                    return View(addTherapyVewModel);
                 }
             }
             else
             {
-                return View(therapyViewModel);
+                return View(addTherapyVewModel);
             }
         }
 

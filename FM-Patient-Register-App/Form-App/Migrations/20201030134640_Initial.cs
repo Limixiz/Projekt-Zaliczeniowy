@@ -193,7 +193,8 @@ namespace Form_App.Migrations
                     Tests = table.Column<string>(nullable: true),
                     TherapyTecnics = table.Column<string>(nullable: false),
                     Recommendation = table.Column<string>(nullable: true),
-                    AdisionalInfo = table.Column<string>(nullable: true),
+                    AdditionalInfo = table.Column<string>(nullable: true),
+                    CreationDate = table.Column<DateTime>(nullable: false),
                     PatientID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

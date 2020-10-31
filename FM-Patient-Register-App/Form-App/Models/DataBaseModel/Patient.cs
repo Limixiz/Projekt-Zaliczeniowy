@@ -33,6 +33,6 @@ namespace Form_App.Models.DataBaseModel
 
         public ApplicationUser ApplicationUser { get; set; }
 
-        public List<Therapy> Therapies { get; set; }
+        public IList<Therapy> Therapies { get; set; }
     }
 }

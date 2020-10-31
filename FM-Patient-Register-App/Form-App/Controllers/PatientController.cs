@@ -58,6 +58,7 @@ namespace Form_App.Controllers
                 HomeAdress = patient.HomeAdress,
                 Email = patient.Email
             };
+           
             return View(patientDetailsViewModel);
         }
 

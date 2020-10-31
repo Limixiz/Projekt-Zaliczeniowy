@@ -79,5 +79,13 @@ namespace Form_App.Services
             _context.Patients.Update(patient);
             return _context.SaveChanges() > 0;
         }
+
+       // public bool IsTherapyInPatientDetails(int id)
+       // {
+        //    var recipeCheck = _context.Patients.Where(rp => rp.ID == id).ToList();
+        //    if (recipeCheck.Count() == 0) return false;
+       //     else return true;
+       // }
+
     }
 }
