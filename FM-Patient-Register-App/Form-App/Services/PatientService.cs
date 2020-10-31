@@ -19,7 +19,7 @@ namespace Form_App.Services
         {
             //var recipeCheck = _context.RecipePlans.Where(rp => rp.RecipeID == id).ToList();
             //if (recipeCheck.Count() == 0) return true;
-             return true;
+            return true;
         }
 
         public int CountAllPatients(int userId)
@@ -80,12 +80,12 @@ namespace Form_App.Services
             return _context.SaveChanges() > 0;
         }
 
-       // public bool IsTherapyInPatientDetails(int id)
-       // {
-        //    var recipeCheck = _context.Patients.Where(rp => rp.ID == id).ToList();
-        //    if (recipeCheck.Count() == 0) return false;
-       //     else return true;
-       // }
+        public bool IsTherapyInPatientDetails(int id)
+        {
+            var recipeCheck = _context.Therapies.Where(rp => rp.PatientID == id).ToList();
+            if (recipeCheck.Count() == 0) return false;
+            else return true;
+        }
 
     }
 }

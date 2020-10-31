@@ -71,6 +71,7 @@ namespace Form_App.Controllers
                 Recommendation = therapy.Recommendation,
                 AdditionalInfo = therapy.AdditionalInfo
             };
+
             return View(therapyDetailsViewModel);
         }
 
