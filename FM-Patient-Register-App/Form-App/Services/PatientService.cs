@@ -1,6 +1,7 @@
 ﻿using Form_App.Context;
 using Form_App.Models.DataBaseModel;
 using Form_App.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -86,6 +87,10 @@ namespace Form_App.Services
             if (recipeCheck.Count() == 0) return false;
             else return true;
         }
-
+        public IList<Therapy> GetTherapiesforPatients(int id)
+        {
+            var patientTherapies  = _context.Therapies.Where(rp => rp.PatientID == id).Include(p => p.Patient).ToList();
+            return patientTherapies;
+        }
     }
 }

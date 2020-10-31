@@ -8,6 +8,7 @@ using Form_App.ViewModels.PatientsInformationModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Form_App.Controllers
 {
@@ -58,8 +59,15 @@ namespace Form_App.Controllers
                 HomeAdress = patient.HomeAdress,
                 Email = patient.Email
             };
-           
-            return View(patientDetailsViewModel);
+            if (_patientService.IsTherapyInPatientDetails(id))
+            {
+                patientDetailsViewModel.TherapiesforPatient = _patientService.GetTherapiesforPatients(patient.ID);
+                return View(patientDetailsViewModel);
+            }
+            else
+            {
+                return View(patientDetailsViewModel);
+            }
         }
 
         // GET: RecipeController/Create

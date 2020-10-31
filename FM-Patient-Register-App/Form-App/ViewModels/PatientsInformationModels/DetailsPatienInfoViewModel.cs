@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Form_App.Models.DataBaseModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -27,5 +28,7 @@ namespace Form_App.ViewModels.PatientsInformationModels
 
         [Display(Name = "E-mial")]
         public string Email { get; set; }
+
+        public IList<Therapy> TherapiesforPatient { get; set; }
     }
 }

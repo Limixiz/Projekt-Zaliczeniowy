@@ -16,5 +16,7 @@ namespace Form_App.Services.Interfaces
         public string GetPatientPersonalIdByPatientId(int patientId);
         public IList<Patient> GetAllByLoggedUser(string loggedUser);
         public IList<Patient> SearchAllBy(string SearchString);
+        public bool IsTherapyInPatientDetails(int id);
+        public IList<Therapy> GetTherapiesforPatients(int id);
     }
 }
